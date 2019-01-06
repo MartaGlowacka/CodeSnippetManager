@@ -1,0 +1,31 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: HelveticaNeueW01-55Roma, HelveticaNeueW02-55Roma,
+    HelveticaNeueW10-55Roma, Helvetica Neue, Helvetica, Arial, メイリオ, meiryo,
+    ヒラギノ角ゴ pro w3, hiragino kaku gothic pro, sans-serif;
+  font-size: 14px;
+}
+
+$list-colors: #353531, #ec4e20, #ff9505, #016fb9, #000000;
+$list-colors2: black, white, #beb7a4, #ff7f11, #ff1b1c;
+$list-colors3: #1b2f33, #248232, #28502e, #8c7051, #ef3054;
+
+.has-text-centered {
+  text-align: center;
+}
+
+.has-margin-top-40 {
+  margin-top: 40px;
+}
+
+.has-margin-top-20 {
+  margin-top: 20px;
+}

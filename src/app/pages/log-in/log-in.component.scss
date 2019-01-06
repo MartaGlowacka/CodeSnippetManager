@@ -1,0 +1,36 @@
+.container {
+  background: black;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  background: #ded7cf;
+  border: 3px solid black;
+
+  form {
+    height: 630px;
+    width: 500px;
+    background: #e0dfdf;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px 50px;
+    border: 2px solid black;
+
+    .header {
+      padding-bottom: 10px;
+    }
+
+    .bottom-tips {
+      p {
+        text-align: center;
+        cursor: pointer;
+        margin-bottom: 5px;
+      }
+
+      p:nth-of-type(2) {
+        color: #e11b1b;
+      }
+    }
+  }
+}
