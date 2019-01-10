@@ -6,8 +6,8 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./personal.component.scss"]
 })
 export class PersonalComponent implements OnInit {
-  public description =
-    "Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.";
+  isExpanded: boolean;
+  currentView: string = "home";
 
   constructor() {}
 

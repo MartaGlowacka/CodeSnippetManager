@@ -12,6 +12,9 @@ import { SignInComponent } from "../app/pages/sign-in/sign-in.component";
 import { PersonalComponent } from "../app/pages/personal/personal.component";
 import { TruncatePipe } from "./pipes/truncate.pipe";
 import { TagComponent } from "../app/components/tag/tag.component";
+import { SnippetFormComponent } from "../app/components/snippet-form/snippet-form.component";
+import { LastAddedSnippetsComponent } from "../app/components/last-added-snippets/last-added-snippets.component";
+import { SnippetViewComponent } from "../app/components/snippet-view/snippet-view.component";
 
 @NgModule({
   declarations: [
@@ -19,11 +22,13 @@ import { TagComponent } from "../app/components/tag/tag.component";
     SvgBikeComponent,
     DashboardComponent,
     MenuComponent,
-    LogInComponent,
     SignInComponent,
     PersonalComponent,
     TruncatePipe,
-    TagComponent
+    TagComponent,
+    SnippetFormComponent,
+    LastAddedSnippetsComponent,
+    SnippetViewComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

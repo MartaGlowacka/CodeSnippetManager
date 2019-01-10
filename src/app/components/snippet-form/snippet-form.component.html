@@ -1,0 +1,51 @@
+<div class="snippet-creator ">
+  <!-- <i
+    class="fa"
+    [ngClass]="{ 'fa-compress': isExpanded, 'fa-expand': !isExpanded }"
+    (click)="isExpanded = !isExpanded"
+  ></i>
+  <h3>Create new</h3> -->
+  <form>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" class="form-control" placeholder="Enter title" />
+      <small id="emailHelp" class="form-text text-muted"
+        >Title is required.</small
+      >
+    </div>
+    <div class="form-group">
+      <label>Content</label> <textarea class="form-control" rows="6"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea class="form-control" rows="6"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Tags</label>
+      <input type="text" class="form-control" placeholder="Enter title" />
+      <small id="emailHelp" class="form-text text-muted"
+        >Select tag from the list or create new one.</small
+      >
+    </div>
+    <div class="form-group">
+      <label>Links</label>
+      <input type="text" class="form-control" placeholder="Enter url" />
+      <small id="emailHelp" class="form-text text-muted"
+        >Add link to Codepen, StackOverflow or any other connected.</small
+      >
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+      <label class="form-check-label" for="exampleCheck1">Private</label>
+      <small id="emailHelp" class="form-text text-muted"
+        >Check if hide snippet for other users</small
+      >
+    </div>
+    <button
+      type="submit"
+      class="btn has-margin-top-40 btn-outline-secondary btn-lg btn-block"
+    >
+      Save
+    </button>
+  </form>
+</div>

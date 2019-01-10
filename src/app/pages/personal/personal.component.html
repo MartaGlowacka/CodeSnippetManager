@@ -2,9 +2,11 @@
   <div class="row user-view">
     <div class="col-1">
       <ul class="list-group">
-        <li class="list-group-item" title="Home"><i class="fa fa-home"></i></li>
+        <li class="list-group-item" title="Home">
+          <a (click)="currentView = 'home'"><i class="fa fa-home"></i></a>
+        </li>
         <li class="list-group-item" title="All snippets">
-          <i class="fa fa-database"></i>
+          <a (click)="currentView = 'all'"><i class="fa fa-database"></i></a>
         </li>
         <li class="list-group-item" title="Tags"><i class="fa fa-tags"></i></li>
         <li class="list-group-item" title="Profile settings">
@@ -14,153 +16,31 @@
       </ul>
     </div>
 
-    <div class="col-11">
+    <div class="col-11" *ngIf="currentView == 'home'">
       <div class="row">
-        <div class="col-8 col-sm-5">
-          <div class="last-added-list has-margin-top-40">
-            <h3>Last added snippets</h3>
-            <hr />
-            <div class="list-group">
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-1 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small>3 days ago</small>
-                </div>
-                <p class="mb-1">{{ description | truncate: 40 }}</p>
-                <small><b>Tags:</b> #js; #function; #animation</small>
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-1 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">{{ description | truncate: 1 }}</p>
-                <small class="text-muted"
-                  ><b>Tags:</b> #js; #function; #animation</small
-                >
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-1 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">{{ description | truncate: 1 }}</p>
-                <small class="text-muted"
-                  ><b>Tags:</b> #js; #function; #animation</small
-                >
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-1 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">{{ description | truncate: 1 }}</p>
-                <small class="text-muted"
-                  ><b>Tags:</b> #js; #function; #animation</small
-                >
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-1 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">{{ description | truncate: 1 }}</p>
-                <small class="text-muted"
-                  ><b>Tags:</b> #js; #function; #animation</small
-                >
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-1 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">{{ description | truncate: 1 }}</p>
-                <small class="text-muted"
-                  ><b>Tags:</b> #js; #function; #animation</small
-                >
-              </a>
-              <a href="#" class="list-group-item list-group-item-action">
-                <div class="d-flex w-1 justify-content-between">
-                  <h5 class="mb-1">List group item heading</h5>
-                  <small class="text-muted">3 days ago</small>
-                </div>
-                <p class="mb-1">{{ description | truncate: 1 }}</p>
-                <small class="text-muted"
-                  ><b>Tags:</b> #js; #function; #animation</small
-                >
-              </a>
-            </div>
-          </div>
+        <div
+          class="col-8"
+          [ngClass]="{ 'col-sm-5': !isExpanded, 'is-display-none': isExpanded }"
+        >
+          <last-added-snippets></last-added-snippets>
         </div>
-        <div class="col-4 col-sm-7">
-          <div class="snippet-creator">
-            <h3>Create new</h3>
-            <form>
-              <div class="form-group">
-                <label>Title</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter title"
-                />
-                <small id="emailHelp" class="form-text text-muted"
-                  >Title is required.</small
-                >
-              </div>
-              <div class="form-group">
-                <label>Content</label>
-                <textarea class="form-control" rows="3"></textarea>
-              </div>
-              <div class="form-group">
-                <label>Description</label>
-                <textarea class="form-control" rows="3"></textarea>
-              </div>
-              <div class="form-group">
-                <label>Tags</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter title"
-                />
-                <small id="emailHelp" class="form-text text-muted"
-                  >Select tag from the list or create new one.</small
-                >
-              </div>
-              <div class="form-group">
-                <label>Links</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Enter url"
-                />
-                <small id="emailHelp" class="form-text text-muted"
-                  >Add link to Codepen, StackOverflow or any other
-                  connected.</small
-                >
-              </div>
-              <div class="form-group form-check">
-                <input
-                  type="checkbox"
-                  class="form-check-input"
-                  id="exampleCheck1"
-                />
-                <label class="form-check-label" for="exampleCheck1"
-                  >Private</label
-                >
-                <small id="emailHelp" class="form-text text-muted"
-                  >Check if hide snippet for other users</small
-                >
-              </div>
-              <button
-                type="submit"
-                class="btn has-margin-top-40 btn-outline-secondary btn-lg btn-block"
-              >
-                Save
-              </button>
-            </form>
-          </div>
+        <div
+          class="col-4 "
+          [ngClass]="{ 'col-sm-12': isExpanded, 'col-sm-7': !isExpanded }"
+        >
+          <i
+            class="fa"
+            [ngClass]="{ 'fa-compress': isExpanded, 'fa-expand': !isExpanded }"
+            (click)="isExpanded = !isExpanded"
+          ></i>
+          <h3>Create new</h3>
+          <snippet-form></snippet-form>
         </div>
       </div>
+    </div>
+
+    <div class="col-11" *ngIf="currentView == 'all'">
+      <snippet-view></snippet-view>
     </div>
   </div>
 </div>

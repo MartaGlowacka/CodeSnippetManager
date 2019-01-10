@@ -8,8 +8,21 @@ import { PersonalComponent } from "./pages/personal/personal.component";
 const routes: Routes = [
   { path: "", component: DashboardComponent },
   { path: "menu", component: MenuComponent },
-  { path: "logIn", component: LogInComponent },
-  { path: "personal", component: PersonalComponent }
+  // {
+  //   path: "logIn",
+  //   component: LogInComponent
+  // },
+  { path: "personal", component: PersonalComponent },
+  {
+    path: "",
+    children: [
+      {
+        path: "logIn",
+        loadChildren: "./lazy.module#LazyModule"
+      }
+    ]
+  }
+  // { path: "lazy", loadChildren: "./lazy.module#LazyModule" }
 ];
 
 @NgModule({

@@ -1,6 +1,6 @@
 .container-fluid {
   width: 99vw;
-  height: 100vh;
+  height: 100%;
 
   .row {
     div[class^="col"] {
@@ -13,10 +13,11 @@
       height: 70vh;
     }
     div.col-5 {
-      background: url(web-development-1928238_1920.png);
+      background: url(web-development-black_1920.png);
       background-position: center;
       background-size: cover;
       position: relative;
+      color: #1bff00;
 
       .text-editor {
         // height: fit-content;
@@ -67,7 +68,7 @@
           overflow: hidden;
           white-space: nowrap;
           margin: 0 auto;
-          animation: typing 1s steps(800) 1;
+          animation: typing 1s steps(15) 1;
           animation-delay: 3s;
           width: 0;
           animation-fill-mode: forwards;
@@ -91,7 +92,7 @@
         margin: 0 auto;
         cursor: pointer;
         &:hover {
-          color: #e11b1b;
+          color: #ec4c56;
         }
       }
     }

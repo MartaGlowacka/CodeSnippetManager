@@ -17,6 +17,13 @@
     padding: 40px 50px;
     border: 2px solid black;
 
+    .form-group {
+      input {
+        background: black;
+        color: #4c9347;
+      }
+    }
+
     .header {
       padding-bottom: 10px;
     }
