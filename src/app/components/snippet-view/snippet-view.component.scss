@@ -1,0 +1,82 @@
+@import "../../../style/styles.scss";
+
+div.snippet-container {
+  height: 100%;
+  width: 100%;
+  // background: $console-background;
+  background: #ded7cf;
+  // color: white;
+
+  .row {
+    div[class^="col"] {
+      min-height: 550px;
+      height: fit-content;
+
+      div[class^="snippet-container"] {
+        margin: 40px 50px 0;
+      }
+    }
+
+    .col-5 {
+      .snippet-container__desc {
+        .snippet-header {
+          display: flex;
+          justify-content: space-between;
+        }
+
+        div.snippet-description {
+          overflow: auto;
+          padding-right: 10px;
+          padding-top: 20px;
+          margin-right: -50px;
+          max-height: 400px;
+
+          @include scrollbar(#aba8a6);
+        }
+      }
+
+      .links {
+        ul {
+          list-style: none;
+          display: flex;
+
+          li {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+
+    .col-7,
+    .col-12 {
+      .snippet-container__console {
+        min-width: 250px;
+        min-height: 400px;
+        // background: #23272e;
+        position: relative;
+
+        i.fa {
+          position: absolute;
+          z-index: 30;
+          right: 15px;
+          top: 60px;
+          color: white;
+          opacity: 0.2;
+        }
+
+        .form-control {
+          // background: #282c35;
+          background: transparent;
+          cursor: pointer;
+          border: none;
+          margin-bottom: 15px;
+          border-radius: 0;
+          &:focus {
+            border-color: transparent;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+  }
+}

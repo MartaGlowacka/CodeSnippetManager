@@ -15,6 +15,8 @@ import { TagComponent } from "../app/components/tag/tag.component";
 import { SnippetFormComponent } from "../app/components/snippet-form/snippet-form.component";
 import { LastAddedSnippetsComponent } from "../app/components/last-added-snippets/last-added-snippets.component";
 import { SnippetViewComponent } from "../app/components/snippet-view/snippet-view.component";
+import { CodemirrorModule } from "@ctrl/ngx-codemirror";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { SnippetViewComponent } from "../app/components/snippet-view/snippet-vie
     LastAddedSnippetsComponent,
     SnippetViewComponent
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, CodemirrorModule],
   providers: [],
   bootstrap: [AppComponent]
 })

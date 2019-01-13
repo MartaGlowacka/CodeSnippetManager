@@ -1,6 +1,29 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~font-awesome/css/font-awesome.css";
 
+@import "~codemirror/lib/codemirror.css";
+@import "~codemirror/theme/material.css";
+@import "~codemirror/theme/midnight.css";
+@import "~codemirror/theme/pastel-on-dark.css";
+@import "~codemirror/addon/scroll/simplescrollbars.css";
+
+$console-background: #282c35;
+
+@mixin scrollbar($background-color) {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $background-color;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,4 +55,20 @@ $list-colors3: #1b2f33, #248232, #28502e, #8c7051, #ef3054;
 
 .is-display-none {
   display: none;
+}
+
+.CodeMirror {
+  height: 400px;
+  width: 100%;
+  box-shadow: inset 0 0 10px #000000;
+
+  div.CodeMirror-gutters {
+    background: $console-background;
+    border-right: 1px solid #3a3a3a;
+    box-shadow: inset 0 0 10px #000000;
+  }
+
+  &.cm-s-midnight {
+    background: $console-background;
+  }
 }

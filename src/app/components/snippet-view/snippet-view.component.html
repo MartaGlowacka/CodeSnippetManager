@@ -1,3 +1,74 @@
-<p>
-  snippet-view works!
-</p>
+<div class="snippet-container">
+  <div class="row">
+    <div [ngClass]="{ 'col-5': !isExpanded, 'is-display-none': isExpanded }">
+      <div class="snippet-container__desc">
+        <div class="snippet-header">
+          <h4>32. Title</h4>
+          <span>3 days ago</span>
+        </div>
+
+        <tag *ngFor="let tag of tags" [tagName]="tag"></tag>
+
+        <div class="snippet-description">
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
+            fugit deserunt iusto possimus ducimus nulla? Nemo similique dicta
+            ut, distinctio voluptatum amet quo quis corrupti impedit atque
+            veniam eveniet officiis?Nisi distinctio facilis libero fugit
+            veritatis hic eaque debrrupti impedit atque veniam eveniet
+            officiis?Nisi distinctioequuntur maiores. ut, distinctio voluptatum
+            amet quo quis corrupti impedit atque veniam eveniet officiis?Nisi
+            amet quo quis corrupti impedit atque veniam eveniet officiis?Nisi
+            distinctio facilis libero fugit veritatis hic eaque debrrupti
+            distinctio facilis libero fugit veritatis hic eaque debrrupti
+            impedit atque veniam eveniet officiis?Nisi distinctioequuntur
+            impedit atque veniam eveniet officiis?Nisi distinctioequuntur
+            maiores. veritatis hic eaque debrrupti impedit atque veniam eveniet
+            maiores. veritatis hic eaque debrrupti impedit atque veniam eveniet
+            officiis?Nisi distinctioequuntur maiores. veritatis hic eaque
+            officiis?Nisi distinctioequuntur maiores. veritatis hic eaque
+            debrrupti impedit atque veniam eveniet officiis?Nisi
+            distinctioequuntur maiores.
+          </p>
+        </div>
+        <div class="links has-margin-top-20">
+          <h6>Related links:</h6>
+          <ul>
+            <li>
+              <a
+                href="https://stackoverflow.com/questions/8378678/how-can-i-set-the-value-of-a-codemirror-editor-using-javascript"
+                >StackOverflow</a
+              >
+            </li>
+            <li>
+              <a href="https://css-tricks.com/snippets/css/css-box-shadow/"
+                >CSS Tricks</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div [ngClass]="{ 'col-12': isExpanded, 'col-7': !isExpanded }">
+      <div class="snippet-container__console">
+        <select class="form-control form-control-sm">
+          <option disabled="true">Select mode</option>
+          <option value="" *ngFor="let mode of languageModes">{{
+            mode
+          }}</option>
+        </select>
+        <i
+          class="fa fa-compress"
+          [ngClass]="{ 'fa-compress': isExpanded, 'fa-expand': !isExpanded }"
+          (click)="isExpanded = !isExpanded"
+        ></i>
+        <ngx-codemirror
+          #codeeditor
+          [(ngModel)]="content"
+          [autoFocus]="true"
+          [options]="codeMirrorOptions"
+        ></ngx-codemirror>
+      </div>
+    </div>
+  </div>
+</div>
