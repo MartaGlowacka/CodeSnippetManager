@@ -1,10 +1,10 @@
 <div class="container-fluid">
   <div class=" row first-row fixed-top">
     <div class="col-4">
-      <h2><b>C</b>ode <b>S</b>nippet <b>M</b>anager</h2>
+      <h2 class="blink-1"><b>C</b>ode <b>S</b>nippet <b>M</b>anager</h2>
     </div>
     <div class="col-8">
-      <nav class="nav">
+      <nav #nav class="nav hamburger-nav ">
         <a class="nav-link active" href="#">Home</a>
         <a class="nav-link" href="#">About</a>
         <a class="nav-link" href="#" routerLink="/logIn">Log In</a>
@@ -13,6 +13,12 @@
           >Sign Up</a
         >
       </nav>
+      <button
+        #hamburger
+        (click)="hamburgerCross = !hamburgerCross; toggleNav()"
+        class="hamburger"
+        [ngClass]="{ 'hamburger-cross': hamburgerCross }"
+      ></button>
     </div>
   </div>
 </div>

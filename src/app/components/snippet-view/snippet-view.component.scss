@@ -22,6 +22,26 @@ div.snippet-container {
         .snippet-header {
           display: flex;
           justify-content: space-between;
+
+          i.fa {
+            position: absolute;
+            opacity: 0.5;
+            cursor: pointer;
+
+            &.fa-edit {
+              right: 35px;
+              top: 10px;
+            }
+
+            &.fa-trash {
+              right: 15px;
+              top: 9.5px;
+            }
+
+            &:hover {
+              opacity: 1;
+            }
+          }
         }
 
         div.snippet-description {

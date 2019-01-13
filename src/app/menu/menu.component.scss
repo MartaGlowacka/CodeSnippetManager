@@ -14,6 +14,11 @@
       left: 50%;
       top: 50%;
       transform: translate(-50%, -50%);
+
+      &.blink-1 {
+        -webkit-animation: blink-1 0.6s both;
+        animation: blink-1 0.6s both;
+      }
     }
   }
 
@@ -24,12 +29,117 @@
       font-size: 1.2em;
       margin-top: 20px;
 
+      @media screen and (min-width: 992px) {
+        visibility: visible !important;
+      }
+
       a {
         color: black;
         font-weight: 600;
         font-size: 1.6rem;
         // border-right: 2px solid black;
       }
+
+      @media screen and (max-width: 992px) {
+        &.hamburger-nav {
+          display: flex;
+          flex-direction: column;
+          background: white;
+          margin-top: 65px !important;
+          margin-right: 15px;
+          border: 2px solid black;
+          visibility: hidden;
+          &.fade-in-top {
+            -webkit-animation: fade-in-top 0.6s
+              cubic-bezier(0.39, 0.575, 0.565, 1) both;
+            animation: fade-in-top 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          }
+
+          a {
+            &:hover {
+              background: #ded7cf;
+            }
+          }
+        }
+      }
     }
+
+    .hamburger {
+      width: 40px;
+      height: 35px;
+      border: 0;
+      border-top: 5px solid black;
+      background: transparent;
+      position: absolute;
+      transition: 0.3s transform linear;
+      top: 20px;
+      right: 30px;
+      display: none;
+
+      @media screen and (max-width: 992px) {
+        display: block;
+      }
+
+      &:focus {
+        outline: none !important;
+      }
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-top: 5px solid black;
+        transform: translateY(10px);
+      }
+
+      &::after {
+        transform: translateY(25px);
+        transition: 0.2s transform linear;
+      }
+
+      &.hamburger-cross {
+        transform: rotate(45deg) translateY(5px);
+        border: none;
+        outline: none !important;
+
+        &::after {
+          transform: rotate(-90deg) translateX(-10px);
+        }
+      }
+    }
+  }
+}
+
+@keyframes fade-in-top {
+  0% {
+    -webkit-transform: translateY(-50px);
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes blink-1 {
+  0%,
+  15%,
+  30%,
+  50%,
+  100% {
+    opacity: 1;
+  }
+  25%,
+  35%,
+  64%,
+  75%,
+  84%,
+  93% {
+    opacity: 0;
   }
 }
