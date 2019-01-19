@@ -37,7 +37,10 @@
         color: black;
         font-weight: 600;
         font-size: 1.6rem;
-        // border-right: 2px solid black;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
 
       @media screen and (max-width: 992px) {

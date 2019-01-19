@@ -5,33 +5,22 @@
         <div class="snippet-header">
           <h4>32. Title</h4>
           <span>3 days ago</span>
-          <i class="fa fa-edit" title="Edit snippet"></i>
+          <i
+            class="fa fa-edit"
+            title="Edit snippet"
+            (click)="editModeOnOff()"
+          ></i>
           <i class="fa fa-trash" title="Delete snippet"></i>
         </div>
 
-        <tag *ngFor="let tag of tags" [tagName]="tag"></tag>
+        <tag
+          *ngFor="let tag of tags"
+          [tagName]="tag"
+          [editMode]="editMode"
+        ></tag>
 
         <div class="snippet-description">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam,
-            fugit deserunt iusto possimus ducimus nulla? Nemo similique dicta
-            ut, distinctio voluptatum amet quo quis corrupti impedit atque
-            veniam eveniet officiis?Nisi distinctio facilis libero fugit
-            veritatis hic eaque debrrupti impedit atque veniam eveniet
-            officiis?Nisi distinctioequuntur maiores. ut, distinctio voluptatum
-            amet quo quis corrupti impedit atque veniam eveniet officiis?Nisi
-            amet quo quis corrupti impedit atque veniam eveniet officiis?Nisi
-            distinctio facilis libero fugit veritatis hic eaque debrrupti
-            distinctio facilis libero fugit veritatis hic eaque debrrupti
-            impedit atque veniam eveniet officiis?Nisi distinctioequuntur
-            impedit atque veniam eveniet officiis?Nisi distinctioequuntur
-            maiores. veritatis hic eaque debrrupti impedit atque veniam eveniet
-            maiores. veritatis hic eaque debrrupti impedit atque veniam eveniet
-            officiis?Nisi distinctioequuntur maiores. veritatis hic eaque
-            officiis?Nisi distinctioequuntur maiores. veritatis hic eaque
-            debrrupti impedit atque veniam eveniet officiis?Nisi
-            distinctioequuntur maiores.
-          </p>
+          <p #param>{{ snippetDesc }}</p>
         </div>
         <div class="links has-margin-top-20">
           <h6>Related links:</h6>
@@ -53,12 +42,17 @@
     </div>
     <div [ngClass]="{ 'col-12': isExpanded, 'col-7': !isExpanded }">
       <div class="snippet-container__console">
-        <select class="form-control form-control-sm">
-          <option disabled="true">Select mode</option>
-          <option value="" *ngFor="let mode of languageModes">{{
-            mode
-          }}</option>
-        </select>
+        <div class="form-group">
+          <select class="form-control form-control-sm">
+            <option disabled="true">Select mode</option>
+            <option value="" *ngFor="let mode of languageModes">{{
+              mode
+            }}</option>
+          </select>
+          <button><i class="fa fa-moon-o"></i></button>
+          <button><i class="fa fa-sun-o"></i></button>
+        </div>
+
         <i
           class="fa fa-compress"
           [ngClass]="{ 'fa-compress': isExpanded, 'fa-expand': !isExpanded }"

@@ -5,6 +5,7 @@
     (click)="isExpanded = !isExpanded"
   ></i>
   <h3>Create new</h3> -->
+  <!-- <form> -->
   <form>
     <div class="form-group">
       <label>Title</label>
@@ -13,9 +14,19 @@
         >Title is required.</small
       >
     </div>
-    <div class="form-group">
-      <label>Content</label> <textarea class="form-control" rows="6"></textarea>
-    </div>
+  </form>
+
+  <div class="form-group">
+    <label>Type your snippet here</label>
+    <!-- <textarea class="form-control" rows="6"></textarea> -->
+    <ngx-codemirror
+      #codeeditor
+      [(ngModel)]="content"
+      [autoFocus]="true"
+      [options]="codeMirrorOptions"
+    ></ngx-codemirror>
+  </div>
+  <form>
     <div class="form-group">
       <label>Description</label>
       <textarea class="form-control" rows="6"></textarea>

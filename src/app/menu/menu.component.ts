@@ -3,8 +3,7 @@ import {
   OnInit,
   ViewChild,
   ElementRef,
-  Renderer2,
-  AfterViewChecked
+  Renderer2
 } from "@angular/core";
 
 @Component({
@@ -12,7 +11,7 @@ import {
   templateUrl: "./menu.component.html",
   styleUrls: ["./menu.component.scss"]
 })
-export class MenuComponent implements OnInit, AfterViewChecked {
+export class MenuComponent implements OnInit {
   @ViewChild("nav") nav: ElementRef;
   @ViewChild("hamburger") hamburger: ElementRef;
 
@@ -21,16 +20,6 @@ export class MenuComponent implements OnInit, AfterViewChecked {
   constructor(private renderer: Renderer2) {}
 
   ngOnInit() {}
-
-  ngAfterViewChecked() {
-    console.log(this.nav);
-
-    if (this.hamburgerCross == true) {
-      this.renderer.setStyle(this.nav.nativeElement, "visibility", "visible");
-    }
-
-    console.log(this.hamburger.nativeElement);
-  }
 
   toggleNav() {
     if (this.hamburgerCross == true) {

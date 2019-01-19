@@ -1,0 +1,23 @@
+.container-fluid {
+  form {
+    display: flex;
+
+    .form-group {
+      width: fit-content;
+      input,
+      select {
+        width: 220px;
+        margin-right: 20px;
+        option {
+          z-index: 999;
+        }
+
+        &:focus {
+          box-shadow: none;
+          outline: 0;
+          // border-color: transparent;
+        }
+      }
+    }
+  }
+}

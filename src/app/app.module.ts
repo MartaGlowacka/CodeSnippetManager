@@ -17,6 +17,8 @@ import { LastAddedSnippetsComponent } from "../app/components/last-added-snippet
 import { SnippetViewComponent } from "../app/components/snippet-view/snippet-view.component";
 import { CodemirrorModule } from "@ctrl/ngx-codemirror";
 import { FormsModule } from "@angular/forms";
+import { AllSnippetsComponent } from "../app/components/all-snippets/all-snippets.component";
+import { SearchFormComponent } from "../app/components/search-form/search-form.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FormsModule } from "@angular/forms";
     TagComponent,
     SnippetFormComponent,
     LastAddedSnippetsComponent,
-    SnippetViewComponent
+    SnippetViewComponent,
+    AllSnippetsComponent,
+    SearchFormComponent
   ],
   imports: [BrowserModule, FormsModule, AppRoutingModule, CodemirrorModule],
   providers: [],

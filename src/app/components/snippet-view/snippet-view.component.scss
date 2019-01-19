@@ -13,12 +13,15 @@ div.snippet-container {
       height: fit-content;
 
       div[class^="snippet-container"] {
-        margin: 40px 50px 0;
+        // margin: 40px 50px 0;
+        margin-top: 40px;
+        margin-bottom: 0;
       }
     }
 
     .col-5 {
       .snippet-container__desc {
+        margin-left: 40px;
         .snippet-header {
           display: flex;
           justify-content: space-between;
@@ -48,7 +51,6 @@ div.snippet-container {
           overflow: auto;
           padding-right: 10px;
           padding-top: 20px;
-          margin-right: -50px;
           max-height: 400px;
 
           @include scrollbar(#aba8a6);
@@ -70,12 +72,13 @@ div.snippet-container {
     .col-7,
     .col-12 {
       .snippet-container__console {
+        margin-right: 40px;
         min-width: 250px;
         min-height: 400px;
         // background: #23272e;
         position: relative;
 
-        i.fa {
+        i.fa:not(.fa-sun-o):not(.fa-moon-o) {
           position: absolute;
           z-index: 30;
           right: 15px;
@@ -84,16 +87,31 @@ div.snippet-container {
           opacity: 0.2;
         }
 
-        .form-control {
-          // background: #282c35;
-          background: transparent;
-          cursor: pointer;
-          border: none;
-          margin-bottom: 15px;
-          border-radius: 0;
-          &:focus {
-            border-color: transparent;
-            box-shadow: none;
+        .form-group {
+          display: flex;
+          margin-bottom: 0;
+          button {
+            width: 60px;
+            background: transparent;
+            cursor: pointer;
+
+            &:focus {
+              outline: none;
+            }
+          }
+
+          .form-control {
+            flex-grow: 2;
+            width: 30%;
+            background: transparent;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 0;
+            &:focus {
+              border-color: transparent;
+              box-shadow: none;
+            }
           }
         }
       }

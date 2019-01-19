@@ -1,3 +1,5 @@
+import { SnippetViewComponent } from "./components/snippet-view/snippet-view.component";
+import { AllSnippetsComponent } from "./components/all-snippets/all-snippets.component";
 import { LogInComponent } from "../app/pages/log-in/log-in.component";
 import { MenuComponent } from "./menu/menu.component";
 import { DashboardComponent } from "../app/pages/dashboard/dashboard.component";
@@ -12,7 +14,15 @@ const routes: Routes = [
   //   path: "logIn",
   //   component: LogInComponent
   // },
-  { path: "personal", component: PersonalComponent },
+  {
+    path: "personal",
+    component: PersonalComponent
+  },
+  {
+    path: "personal/snippetView/:id",
+    component: SnippetViewComponent
+  },
+
   {
     path: "",
     children: [
