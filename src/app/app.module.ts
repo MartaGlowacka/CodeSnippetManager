@@ -19,6 +19,7 @@ import { CodemirrorModule } from "@ctrl/ngx-codemirror";
 import { FormsModule } from "@angular/forms";
 import { AllSnippetsComponent } from "../app/components/all-snippets/all-snippets.component";
 import { SearchFormComponent } from "../app/components/search-form/search-form.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,13 @@ import { SearchFormComponent } from "../app/components/search-form/search-form.c
     AllSnippetsComponent,
     SearchFormComponent
   ],
-  imports: [BrowserModule, FormsModule, AppRoutingModule, CodemirrorModule],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    CodemirrorModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

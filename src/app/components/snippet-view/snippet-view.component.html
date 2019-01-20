@@ -3,7 +3,7 @@
     <div [ngClass]="{ 'col-5': !isExpanded, 'is-display-none': isExpanded }">
       <div class="snippet-container__desc">
         <div class="snippet-header">
-          <h4>32. Title</h4>
+          <h4 *ngIf="snippet">{{ snippet["id"] }}. {{ snippet["title"] }}</h4>
           <span>3 days ago</span>
           <i
             class="fa fa-edit"
@@ -20,8 +20,17 @@
         ></tag>
 
         <div class="snippet-description">
-          <p #param>{{ snippetDesc }}</p>
+          <p #param>{{ snippet["description"] }}</p>
         </div>
+
+        <button
+          *ngIf="editMode"
+          type="button"
+          class="btn btn-secondary btn-lg btn-block"
+          (click)="getEditedDescription()"
+        >
+          Submit
+        </button>
         <div class="links has-margin-top-20">
           <h6>Related links:</h6>
           <ul>

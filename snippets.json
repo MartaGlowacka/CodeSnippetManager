@@ -1,0 +1,19 @@
+{
+  "snippets": [
+    {
+      "description": "This is description of first snippet.",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "Second snippet header",
+      "content": "Second snippet content - checl how to parse code into json format",
+      "description": "This is description of second snippet",
+      "tags": [
+        "angular",
+        "typescript"
+      ],
+      "links": []
+    }
+  ]
+}

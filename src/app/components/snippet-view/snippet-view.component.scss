@@ -53,6 +53,9 @@ div.snippet-container {
           padding-top: 20px;
           max-height: 400px;
 
+          p {
+            min-height: 350px;
+          }
           @include scrollbar(#aba8a6);
         }
       }

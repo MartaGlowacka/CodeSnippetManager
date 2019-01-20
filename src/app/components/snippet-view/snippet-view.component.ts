@@ -1,3 +1,5 @@
+import { ISnippet } from "./../../interfaces/snippet";
+import { HttpClient } from "@angular/common/http";
 import {
   Component,
   OnInit,
@@ -7,6 +9,8 @@ import {
 } from "@angular/core";
 import * as CodeMirror from "codemirror";
 import { PARAMETERS } from "@angular/core/src/util/decorators";
+import { HttpObserve } from "@angular/common/http/src/client";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "snippet-view",
@@ -19,9 +23,7 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
 
   tags = ["typescript", "angular", "animation"];
   editMode: boolean = false;
-
   isExpanded: boolean = false;
-
   content: string =
     "export function averages (numbers:number[]) : number[]" +
     " {" +
@@ -38,7 +40,11 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
   languageModes;
   selectedMode: string = "javascript";
 
-  constructor(private renderer: Renderer2) {
+  snippet = {};
+
+  baseUrl = "http://localhost:3000/snippets/";
+
+  constructor(private renderer: Renderer2, private httpClient: HttpClient) {
     this.codeMirrorOptions = {
       lineNumbers: true,
       theme: "midnight",
@@ -66,6 +72,12 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     console.log(this.snippetDesc);
+
+    this.snippet["id"] = 1;
+
+    this.httpClient.get(this.baseUrl + this.snippet["id"]).subscribe(res => {
+      this.snippet = res;
+    });
   }
 
   ngAfterViewInit() {
@@ -94,11 +106,21 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
     }
   }
 
-  // potrzebna metoda http
   getEditedDescription() {
     let description = this.param.nativeElement.innerText;
     this.snippetDesc = description;
 
-    // let dupa = localStorage.getItem(this.param.nativeElement);
+    this.httpClient
+      .put(this.baseUrl + this.snippet["id"], {
+        description: this.snippetDesc
+      })
+      .subscribe(
+        res => {
+          console.log(res, "Success");
+        },
+        error => {
+          console.error(error, "Cant make req.");
+        }
+      );
   }
 }
