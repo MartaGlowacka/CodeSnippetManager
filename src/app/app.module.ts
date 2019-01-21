@@ -1,3 +1,4 @@
+import { SnippetsService } from "./services/snippets.service";
 import { AppPage } from "./../../e2e/src/app.po";
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -44,7 +45,7 @@ import { HttpClientModule } from "@angular/common/http";
     CodemirrorModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SnippetsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

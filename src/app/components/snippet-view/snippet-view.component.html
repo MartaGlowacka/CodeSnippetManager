@@ -19,7 +19,7 @@
           [editMode]="editMode"
         ></tag>
 
-        <div class="snippet-description">
+        <div class="snippet-description" *ngIf="snippet">
           <p #param>{{ snippet["description"] }}</p>
         </div>
 
@@ -27,7 +27,7 @@
           *ngIf="editMode"
           type="button"
           class="btn btn-secondary btn-lg btn-block"
-          (click)="getEditedDescription()"
+          (click)="editDescription()"
         >
           Submit
         </button>

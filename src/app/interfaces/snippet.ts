@@ -6,4 +6,5 @@ export interface ISnippet {
   tags: string[];
   isHidden: boolean;
   links: string[];
+  date: Date;
 }

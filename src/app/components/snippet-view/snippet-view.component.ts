@@ -11,6 +11,7 @@ import * as CodeMirror from "codemirror";
 import { PARAMETERS } from "@angular/core/src/util/decorators";
 import { HttpObserve } from "@angular/common/http/src/client";
 import { Observable } from "rxjs";
+import { SnippetsService } from "src/app/services/snippets.service";
 
 @Component({
   selector: "snippet-view",
@@ -42,9 +43,10 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
 
   snippet = {};
 
-  baseUrl = "http://localhost:3000/snippets/";
-
-  constructor(private renderer: Renderer2, private httpClient: HttpClient) {
+  constructor(
+    private renderer: Renderer2,
+    private snippetService: SnippetsService
+  ) {
     this.codeMirrorOptions = {
       lineNumbers: true,
       theme: "midnight",
@@ -71,13 +73,7 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit() {
-    console.log(this.snippetDesc);
-
     this.snippet["id"] = 1;
-
-    this.httpClient.get(this.baseUrl + this.snippet["id"]).subscribe(res => {
-      this.snippet = res;
-    });
   }
 
   ngAfterViewInit() {
@@ -85,6 +81,14 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
     const doc = editor.getDoc();
 
     editor.options.value = this.content;
+
+    this.getSnippet();
+  }
+
+  async getSnippet() {
+    await this.snippetService.getSnippetById(1).subscribe(res => {
+      this.snippet = res;
+    });
   }
 
   editModeOnOff() {
@@ -102,25 +106,18 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
         this.param.nativeElement,
         "contenteditable"
       );
-      this.getEditedDescription();
+      this.editDescription();
     }
   }
 
-  getEditedDescription() {
+  async editDescription() {
     let description = this.param.nativeElement.innerText;
-    this.snippetDesc = description;
 
-    this.httpClient
-      .put(this.baseUrl + this.snippet["id"], {
-        description: this.snippetDesc
-      })
-      .subscribe(
-        res => {
-          console.log(res, "Success");
-        },
-        error => {
-          console.error(error, "Cant make req.");
-        }
-      );
+    await this.snippetService
+      .editSnippetDescription(this.snippet["id"], { description: description })
+      .subscribe(res => {
+        console.log(res);
+        this.snippet = res;
+      });
   }
 }

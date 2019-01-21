@@ -1,7 +1,9 @@
 {
   "snippets": [
     {
-      "description": "This is description of first snippet.",
+      "title": "First snippet heeader",
+      "content": "Content",
+      "description": "This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha.",
       "id": 1
     },
     {
