@@ -7,8 +7,13 @@ import { Injectable } from "@angular/core";
 })
 export class SnippetsService {
   baseUrl = "http://localhost:3000/snippets/";
+  tagsUrl = "http://localhost:4001/tags";
 
   constructor(private httpClient: HttpClient) {}
+
+  getAllSnippets() {
+    return this.httpClient.get<ISnippet[]>(this.baseUrl);
+  }
 
   getSnippetById(snippetId?: number) {
     return this.httpClient.get<ISnippet>(this.baseUrl + snippetId);
@@ -16,5 +21,9 @@ export class SnippetsService {
 
   editSnippetDescription(snippetId: number, body: object) {
     return this.httpClient.patch(this.baseUrl + snippetId, body);
+  }
+
+  getTags() {
+    return this.httpClient.get<any>(this.tagsUrl);
   }
 }

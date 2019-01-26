@@ -24,7 +24,7 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
 
   modalVisible: boolean = false;
 
-  tags = ["typescript", "angular", "animation"];
+  tags;
   editMode: boolean = false;
   isExpanded: boolean = false;
   content: string =
@@ -88,8 +88,9 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
   }
 
   async getSnippet() {
-    await this.snippetService.getSnippetById(1).subscribe(res => {
+    await this.snippetService.getSnippetById(2).subscribe(res => {
       this.snippet = res;
+      this.tags = res.tags;
     });
   }
 

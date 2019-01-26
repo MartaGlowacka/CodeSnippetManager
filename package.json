@@ -9,7 +9,10 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "mock:service": "json-server -watch snippets.json",
+  "mock:service": [
+    "json-server -watch snippets.json",
+    "json-server -watch tags.json"
+  ],
   "private": true,
   "dependencies": {
     "@angular/animations": "~7.1.0",

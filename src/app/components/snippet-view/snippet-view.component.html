@@ -15,10 +15,11 @@
 
         <tag
           *ngFor="let tag of tags"
-          [tagName]="tag"
+          [tagName]="tag.name"
+          [color]="tag.color"
           [editMode]="editMode"
         ></tag>
-
+        <span class="add" *ngIf="editMode" title="Add tag">+</span>
         <div class="snippet-description" *ngIf="snippet">
           <p #param>{{ snippet["description"] }}</p>
         </div>

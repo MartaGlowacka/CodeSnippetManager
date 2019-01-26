@@ -1,5 +1,5 @@
 <!-- <div class="col-11" style="padding: 20px;"> -->
-<search-form></search-form>
+<search-form (searchByTag)="searchByTag($event)"></search-form>
 
 <div class="last-added-list">
   <h3>All snippets</h3>
@@ -14,41 +14,35 @@
         <h5 class="mb-1">List group item heading</h5>
         <small>3 days ago</small>
       </div>
-      <p class="mb-1">{{ description }}</p>
+      <p class="mb-1">{{ description | truncate: 100 }}</p>
       <small
         ><b>Tags:</b> <tag *ngFor="let tag of tags" [tagName]="tag"></tag
       ></small>
     </a>
-    <a href="#" class="list-group-item list-group-item-action">
+    <a
+      *ngFor="let snippet of allSnippetsBuffor"
+      routerLink="/personal/snippetView/ + snippet.id"
+      class="list-group-item list-group-item-action"
+    >
       <div class="d-flex w-1 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small class="text-muted">3 days ago</small>
+        <h5 class="mb-1">{{ snippet.title }}</h5>
+        <small class="text-muted">{{ snippet.date }}</small>
       </div>
-      <p class="mb-1">{{ description }}</p>
-      <small class="text-muted"><b>Tags:</b> #js; #function; #animation</small>
+      <p class="mb-1">{{ snippet.description | truncate: 100 }}</p>
+      <tag
+        *ngFor="let tag of snippet.tags"
+        [tagName]="tag.name"
+        [color]="tag.color"
+      ></tag>
+      <!-- <small class="text-muted"><b>Tags:</b> #js; #function; #animation</small> -->
     </a>
+
     <a href="#" class="list-group-item list-group-item-action">
       <div class="d-flex w-1 justify-content-between">
         <h5 class="mb-1">List group item heading</h5>
         <small class="text-muted">3 days ago</small>
       </div>
-      <p class="mb-1">{{ description }}</p>
-      <small class="text-muted"><b>Tags:</b> #js; #function; #animation</small>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-1 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">{{ description }}</p>
-      <small class="text-muted"><b>Tags:</b> #js; #function; #animation</small>
-    </a>
-    <a href="#" class="list-group-item list-group-item-action">
-      <div class="d-flex w-1 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small class="text-muted">3 days ago</small>
-      </div>
-      <p class="mb-1">{{ description }}</p>
+      <p class="mb-1">{{ description | truncate: 100 }}</p>
       <small class="text-muted"><b>Tags:</b> #js; #function; #animation</small>
     </a>
     <a href="#" class="list-group-item list-group-item-action">

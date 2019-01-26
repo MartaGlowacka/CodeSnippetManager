@@ -3,8 +3,19 @@
     {
       "title": "First snippet heeader",
       "content": "Content",
-      "description": "This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg, This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg, This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg, This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg, This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg,",
-      "id": 1
+      "description": "This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg, This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg, This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg, This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg, This is description of first snippet. And I wrote it now checking if patch or put. Hahahaha. dfhfghdfghfgjfgjfgjfjfgjhdg, ",
+      "id": 1,
+      "date": "3 days ago",
+      "tags": [
+        {
+          "name": "animation",
+          "color": "#87ff87"
+        },
+        {
+          "name": "node",
+          "color": "silver"
+        }
+      ]
     },
     {
       "id": 2,
@@ -12,10 +23,49 @@
       "content": "Second snippet content - checl how to parse code into json format",
       "description": "This is description of second snippet",
       "tags": [
-        "angular",
-        "typescript"
+        {
+          "name": "angular",
+          "color": "#57ff3a"
+        },
+        {
+          "name": "typescript",
+          "color": "gold"
+        }
       ],
-      "links": []
+      "links": [],
+      "date": "5 days ago"
+    },
+    {
+      "id": 3,
+      "title": "Removing Jetpack CSS",
+      "content": "Second snippet content - checl how to parse code into json format",
+      "description": "Jetpack is a WordPress plugin that brings a ton of features to WordPress. You turn on the features as needed. At the time of this writing, rather than include a separate CSS file for each feature as needed, they load a large concatenated stylesheet with all the CSS together.I was in a position where I was using a few Jetpack features but actually needed none of the CSS.",
+      "tags": [
+        {
+          "name": "css",
+          "color": "lawngreen"
+        }
+      ],
+      "links": [
+        "https://css-tricks.com/snippets/wordpress/removing-jetpack-css/"
+      ],
+      "date": "13 days ago"
+    },
+    {
+      "id": 4,
+      "title": "Js object basis",
+      "content": "Js object basis vfvgdfbfbfb",
+      "description": "An object is a collection of related data and/or functionality (which usually consists of several variables and functions — which are called properties and methods when they are inside objects.) Let's work through an example to understand what they look like.",
+      "tags": [
+        {
+          "name": "javascript",
+          "color": "pink"
+        }
+      ],
+      "links": [
+        "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics"
+      ],
+      "date": "19 days ago"
     }
   ]
 }

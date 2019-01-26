@@ -93,6 +93,7 @@
       h4 {
         width: fit-content;
         margin: 25% auto 0 auto;
+        font-size: 2vw;
       }
       p {
         margin: 15% 15%;
@@ -134,7 +135,7 @@
 
       li {
         margin: 0 15px;
-        opacity: 0.7;
+        opacity: 0.6;
         font-family: monospace;
         animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
       }

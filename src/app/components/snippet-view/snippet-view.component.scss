@@ -22,6 +22,7 @@ div.snippet-container {
     .col-5 {
       .snippet-container__desc {
         margin-left: 40px;
+        // position: relative;
         .snippet-header {
           display: flex;
           justify-content: space-between;
@@ -47,6 +48,15 @@ div.snippet-container {
           }
         }
 
+        span.add {
+          font-size: 24px;
+          top: 68px;
+          cursor: pointer;
+          right: 20px;
+          margin-left: 15px;
+          position: absolute;
+        }
+
         div.snippet-description {
           overflow: auto;
           padding-right: 10px;
@@ -55,6 +65,7 @@ div.snippet-container {
 
           p {
             min-height: 350px;
+            padding: 5px;
 
             &:focus {
               border: 2px solid black;

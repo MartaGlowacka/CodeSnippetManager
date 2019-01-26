@@ -1,0 +1,60 @@
+{
+  "tags": [
+    {
+      "name": "javascript",
+      "color": "pink"
+    },
+    {
+      "name": "java",
+      "color": "yellow"
+    },
+    {
+      "name": "angular",
+      "color": "#57ff3a"
+    },
+    {
+      "name": "react",
+      "color": "red"
+    },
+    {
+      "name": "php",
+      "color": "orange"
+    },
+    {
+      "name": "kotlin",
+      "color": "blue"
+    },
+    {
+      "name": "animation",
+      "color": "#87ff87"
+    },
+    {
+      "name": "css",
+      "color": "lawngreen"
+    },
+    {
+      "name": "sass",
+      "color": "crimson"
+    },
+    {
+      "name": "less",
+      "color": "cadetblue"
+    },
+    {
+      "name": "error",
+      "color": "brown"
+    },
+    {
+      "name": "json-server",
+      "color": "brown"
+    },
+    {
+      "name": "typescript",
+      "color": "gold"
+    },
+    {
+      "name": "node",
+      "color": "silver"
+    }
+  ]
+}
