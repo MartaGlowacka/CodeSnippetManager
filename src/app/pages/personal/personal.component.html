@@ -3,22 +3,30 @@
     <div class="col-1">
       <ul class="list-group">
         <li class="list-group-item" title="Home">
-          <a (click)="currentView = 'home'"><i class="fa fa-home"></i></a>
+          <a (click)="currentView = 'home'" href="#" routerLink="./home"
+            ><i class="fa fa-home"></i
+          ></a>
         </li>
         <li class="list-group-item" title="All snippets">
-          <a (click)="currentView = 'all'"><i class="fa fa-database"></i></a>
+          <a (click)="currentView = 'all'" href="#" routerLink="./allSnippets"
+            ><i class="fa fa-database"></i
+          ></a>
         </li>
         <li class="list-group-item" title="Tags">
           <a (click)="currentView = 'config'"><i class="fa fa-tags"></i></a>
         </li>
         <li class="list-group-item" title="Profile settings">
-          <i class="fa fa-cogs"></i>
+          <a href="#" routerLink="./settings"><i class="fa fa-cogs"></i></a>
         </li>
         <li class="list-group-item" title="Doc"><i class="fa fa-book"></i></li>
       </ul>
     </div>
 
-    <div class="col-11" *ngIf="currentView == 'home'">
+    <div class="col-11">
+      <main><router-outlet></router-outlet></main>
+    </div>
+
+    <!-- <div class="col-11" *ngIf="currentView == 'home'">
       <div class="row">
         <div
           class="col-8"
@@ -39,15 +47,15 @@
           <snippet-form></snippet-form>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="col-11" style="padding: 20px;" *ngIf="currentView == 'all'">
-      <!-- <snippet-view></snippet-view> -->
-      <all-snippets></all-snippets>
-    </div>
+    <!-- <div class="col-11" style="padding: 20px;" *ngIf="currentView == 'all'">
+     <snippet-view></snippet-view> -->
+    <!-- <all-snippets></all-snippets> -->
+    <!-- </div> -->
 
-    <div class="col-11" style="padding: 20px;" *ngIf="currentView == 'config'">
+    <!-- <div class="col-11" style="padding: 20px;" *ngIf="currentView == 'config'">
       <configuration></configuration>
-    </div>
+    </div> -->
   </div>
 </div>

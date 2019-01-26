@@ -16,7 +16,11 @@
     </div>
     <div class="col-3"></div>
   </div>
-  <div class="row" style="height: 10vh; background: #B5C9C3;"></div>
+  <div class="row languages" style="height: 10vh; background: #B5C9C3;">
+    <ul>
+      <li *ngFor="let lang of languages; let i = index">{{ lang }}</li>
+    </ul>
+  </div>
   <div class="row second-row">
     <div class="col"><h1></h1></div>
     <div class="col-5"></div>

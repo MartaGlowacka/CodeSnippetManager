@@ -1,3 +1,5 @@
+import { ConfigurationComponent } from "./configuration/configuration.component";
+import { LastAddedSnippetsComponent } from "./components/last-added-snippets/last-added-snippets.component";
 import { SnippetViewComponent } from "./components/snippet-view/snippet-view.component";
 import { AllSnippetsComponent } from "./components/all-snippets/all-snippets.component";
 import { LogInComponent } from "../app/pages/log-in/log-in.component";
@@ -16,7 +18,22 @@ const routes: Routes = [
   // },
   {
     path: "personal",
-    component: PersonalComponent
+    component: PersonalComponent,
+
+    children: [
+      {
+        path: "home",
+        component: LastAddedSnippetsComponent
+      },
+      {
+        path: "allSnippets",
+        component: AllSnippetsComponent
+      },
+      {
+        path: "settings",
+        component: ConfigurationComponent
+      }
+    ]
   },
   {
     path: "personal/snippetView/:id",

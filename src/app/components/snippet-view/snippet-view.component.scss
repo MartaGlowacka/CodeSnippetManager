@@ -28,7 +28,7 @@ div.snippet-container {
 
           i.fa {
             position: absolute;
-            opacity: 0.5;
+            opacity: 0.8;
             cursor: pointer;
 
             &.fa-edit {
@@ -55,6 +55,12 @@ div.snippet-container {
 
           p {
             min-height: 350px;
+
+            &:focus {
+              border: 2px solid black;
+              outline: none;
+              // outline: black auto 5px;
+            }
           }
           @include scrollbar(#aba8a6);
         }
@@ -100,6 +106,8 @@ div.snippet-container {
 
             &:focus {
               outline: none;
+              border: none;
+              box-shadow: none;
             }
           }
 

@@ -28,13 +28,15 @@ $console-background: #282c35;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: monospace;
 }
 
 body {
-  font-family: HelveticaNeueW01-55Roma, HelveticaNeueW02-55Roma,
-    HelveticaNeueW10-55Roma, Helvetica Neue, Helvetica, Arial, メイリオ, meiryo,
-    ヒラギノ角ゴ pro w3, hiragino kaku gothic pro, sans-serif;
+  // font-family: HelveticaNeueW01-55Roma, HelveticaNeueW02-55Roma,
+  //   HelveticaNeueW10-55Roma, Helvetica Neue, Helvetica, Arial, メイリオ, meiryo,
+  //   ヒラギノ角ゴ pro w3, hiragino kaku gothic pro, sans-serif;
   font-size: 14px;
+  font-family: monospace;
 }
 
 $list-colors: #353531, #ec4e20, #ff9505, #016fb9, #000000;

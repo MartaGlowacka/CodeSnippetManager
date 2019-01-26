@@ -23,12 +23,6 @@
 
     .config-steps {
       .number {
-        // height: 28px;
-        // width: 28px;
-        // border-radius: 50%;
-        // border: 1.5px solid black;
-        // background: black;
-        // color: white;
         line-height: 30px;
         margin: 30px;
         text-align: center;
@@ -45,6 +39,22 @@
       background-size: contain;
       background-position: center;
       background-size: 70%;
+
+      .mobile-text {
+        position: absolute;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        top: 50%;
+        left: 53%;
+        right: 25%;
+        width: 105px;
+        transform: translate(-50%, -50%);
+        font-weight: 600;
+        font-size: 2vw;
+        // animation: typing 3s steps(5) 1;
+        animation: typing 1.5s steps(20, end);
+      }
     }
 
     .bottom-container {
@@ -89,4 +99,75 @@
       }
     }
   }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  10% {
+    width: calc(105px / 10);
+  }
+  15% {
+    width: calc(105px / 10);
+  }
+  20% {
+    width: calc(105px / 10 * 2);
+  }
+  25% {
+    width: calc(105px / 10 * 2);
+  }
+  30% {
+    width: calc(105px / 10 * 3);
+  }
+  35% {
+    width: calc(105px / 10 * 3);
+  }
+  40% {
+    width: calc(105px / 10 * 4);
+  }
+  45% {
+    width: calc(105px / 10 * 4);
+  }
+  50% {
+    width: calc(105px / 10 * 5);
+  }
+  55% {
+    width: calc(105px / 10 * 5);
+  }
+  60% {
+    width: calc(105px / 10 * 6);
+  }
+  65% {
+    width: calc(105px / 10 * 6);
+  }
+  70% {
+    width: calc(105px / 10 * 7);
+  }
+  75% {
+    width: calc(105px / 10 * 7);
+  }
+  80% {
+    width: calc(105px / 10 * 8);
+  }
+  85% {
+    width: calc(105px / 10 * 8);
+  }
+  90% {
+    width: calc(105px / 10 * 9);
+  }
+  95% {
+    width: calc(105px / 10 * 9);
+  }
+  100% {
+    width: 105px;
+  }
+
+  // from {
+  //   width: 0;
+  //   // display: inline-block;
+  // }
+  // to {
+  //   width: 105px;
+  // }
 }

@@ -15,17 +15,19 @@
     div.col-5 {
       background: url(web-development-black_1920.png);
       background-position: center;
-      background-size: cover;
+      background-size: 90%;
+      background-repeat: no-repeat;
       position: relative;
       color: #1bff00;
+      font-family: monospace;
 
       .text-editor {
         // height: fit-content;
         width: fit-content;
         min-width: 15px;
-        font-size: 2em;
+        font-size: 2vw;
         position: absolute;
-        top: 30%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, -50%);
         display: flex;
@@ -46,8 +48,11 @@
             width: 13px;
             transform: rotate(45deg);
             position: absolute;
-            top: 23px;
+            top: 13px;
             left: -15px;
+            @media screen and (max-width: 976px) {
+              display: none;
+            }
           }
 
           &::after {
@@ -58,8 +63,11 @@
             width: 13px;
             transform: rotate(45deg);
             position: absolute;
-            top: 23px;
+            top: 13px;
             left: 12px;
+            @media screen and (max-width: 976px) {
+              display: none;
+            }
           }
         }
 
@@ -70,9 +78,12 @@
           margin: 0 auto;
           animation: typing 1s steps(15) 1;
           animation-delay: 3s;
-          width: 0;
           animation-fill-mode: forwards;
+          width: 0;
           position: relative;
+        }
+        @media screen and (max-width: 976px) {
+          top: 50%;
         }
       }
     }
@@ -81,12 +92,13 @@
       background: #f4f0bb;
       h4 {
         width: fit-content;
-        margin: 30% auto 0 auto;
+        margin: 25% auto 0 auto;
       }
       p {
         margin: 15% 15%;
         text-align: center;
-        line-height: 35px;
+        line-height: 4vh;
+        font-size: 1.3vw;
       }
       p:nth-of-type(2) {
         margin: 0 auto;
@@ -109,6 +121,59 @@
     .col-5 {
       background: url(programmer-1653351_1280.png);
       background-size: cover;
+    }
+  }
+
+  div.row:nth-of-type(2) {
+    ul {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      list-style: none;
+      line-height: 10vh;
+
+      li {
+        margin: 0 15px;
+        opacity: 0.7;
+        font-family: monospace;
+        animation: text-focus-in 1s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+      }
+      li:nth-of-type(2) {
+        animation-delay: 300ms;
+      }
+      li:nth-of-type(3) {
+        animation-delay: 500ms;
+      }
+      li:nth-of-type(4) {
+        animation-delay: 700ms;
+      }
+      li:nth-of-type(5) {
+        animation-delay: 900ms;
+      }
+      li:nth-of-type(6) {
+        animation-delay: 1100ms;
+      }
+      li:nth-of-type(7) {
+        animation-delay: 1300ms;
+      }
+      li:nth-of-type(8) {
+        animation-delay: 1300ms;
+      }
+      li:nth-of-type(9) {
+        animation-delay: 1100ms;
+      }
+      li:nth-of-type(10) {
+        animation-delay: 900ms;
+      }
+      li:nth-of-type(11) {
+        animation-delay: 700ms;
+      }
+      li:nth-of-type(12) {
+        animation-delay: 500ms;
+      }
+      li:nth-of-type(13) {
+        animation-delay: 300ms;
+      }
     }
   }
 }
@@ -138,5 +203,18 @@
   }
   to {
     width: 100%;
+  }
+}
+
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(12px);
+    filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+    filter: blur(0px);
+    opacity: 1;
   }
 }
