@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="config-modal">
+    <h3>
+      <span><i class="fa fa-cogs"></i></span>Mobile config
+    </h3>
+
+    <div class="config-steps" [ngSwitch]="stepId">
+      <ng-template [ngSwitchCase]="1"
+        ><div class="number">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
+          tempore esse praesentium nihil..
+        </div>
+      </ng-template>
+      <ng-template [ngSwitchCase]="2"
+        ><div class="number">
+          Dolores nesciunt quaerat, similique deleniti tempora quos voluptatem,
+          eum nobis quasi distinctio recusandae!
+        </div>
+      </ng-template>
+      <ng-template [ngSwitchCase]="3"
+        ><div class="number">
+          Non facilis inventore nisi, consequuntur animi earum blanditiis
+          temporibus ex quibusdam modi.
+        </div>
+      </ng-template>
+      <ng-template [ngSwitchCase]="4"
+        ><div class="number">Tu będzie button do menu.</div>
+      </ng-template>
+    </div>
+    <div class="mobile-img"></div>
+    <div class="bottom-container">
+      <button class="btn" (click)="changeStep()">{{ infoText }}</button>
+      <div class="dots">
+        <span
+          *ngFor="let step of steps"
+          [ngClass]="{ 'is-active': step == stepId }"
+        ></span>
+      </div>
+    </div>
+  </div>
+</div>

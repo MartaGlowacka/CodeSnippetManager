@@ -22,6 +22,8 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
   @ViewChild("codeeditor") codeEditor;
   @ViewChild("param") param;
 
+  modalVisible: boolean = false;
+
   tags = ["typescript", "angular", "animation"];
   editMode: boolean = false;
   isExpanded: boolean = false;

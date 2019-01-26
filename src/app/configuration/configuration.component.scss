@@ -1,0 +1,92 @@
+.container {
+  height: fit-content;
+
+  .config-modal {
+    background: white;
+    width: 460px;
+    height: 560px;
+    margin: 0 auto;
+    border: 3px solid black;
+    position: relative;
+
+    h3 {
+      padding: 25px 0 25px 55px;
+      border-bottom: 1px solid #ece6e6;
+      margin: 0 20px;
+      position: relative;
+
+      span {
+        position: absolute;
+        left: 10px;
+      }
+    }
+
+    .config-steps {
+      .number {
+        // height: 28px;
+        // width: 28px;
+        // border-radius: 50%;
+        // border: 1.5px solid black;
+        // background: black;
+        // color: white;
+        line-height: 30px;
+        margin: 30px;
+        text-align: center;
+      }
+    }
+
+    .mobile-img {
+      position: absolute;
+      width: 100%;
+      bottom: 80px;
+      height: 40%;
+      background: url(kisspng-iphone-computer-icons-smartphone-clip-art-mobile-phone-icon-5ad7b26f7e6921.7126755415240853595178.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      background-size: 70%;
+    }
+
+    .bottom-container {
+      position: absolute;
+      bottom: 10px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+
+      button {
+        background: transparent;
+        border: none;
+        opacity: 0.8;
+        margin-bottom: 10px;
+
+        &:hover {
+          opacity: 1;
+        }
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      .dots {
+        width: inherit;
+        display: flex;
+        justify-content: center;
+        span {
+          height: 10px;
+          width: 10px;
+          background: #e6e6e6;
+          border-radius: 50%;
+          margin: 10px;
+          border: 1px solid #9f9f9f;
+
+          &.is-active {
+            background-color: #9f9f9f !important;
+          }
+        }
+      }
+    }
+  }
+}

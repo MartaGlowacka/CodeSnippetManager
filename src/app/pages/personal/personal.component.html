@@ -8,7 +8,9 @@
         <li class="list-group-item" title="All snippets">
           <a (click)="currentView = 'all'"><i class="fa fa-database"></i></a>
         </li>
-        <li class="list-group-item" title="Tags"><i class="fa fa-tags"></i></li>
+        <li class="list-group-item" title="Tags">
+          <a (click)="currentView = 'config'"><i class="fa fa-tags"></i></a>
+        </li>
         <li class="list-group-item" title="Profile settings">
           <i class="fa fa-cogs"></i>
         </li>
@@ -42,6 +44,10 @@
     <div class="col-11" style="padding: 20px;" *ngIf="currentView == 'all'">
       <!-- <snippet-view></snippet-view> -->
       <all-snippets></all-snippets>
+    </div>
+
+    <div class="col-11" style="padding: 20px;" *ngIf="currentView == 'config'">
+      <configuration></configuration>
     </div>
   </div>
 </div>

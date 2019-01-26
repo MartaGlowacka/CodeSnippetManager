@@ -1,3 +1,4 @@
+import { CommonModule } from "@angular/common";
 import { SnippetsService } from "./services/snippets.service";
 import { AppPage } from "./../../e2e/src/app.po";
 import { BrowserModule } from "@angular/platform-browser";
@@ -21,6 +22,7 @@ import { FormsModule } from "@angular/forms";
 import { AllSnippetsComponent } from "../app/components/all-snippets/all-snippets.component";
 import { SearchFormComponent } from "../app/components/search-form/search-form.component";
 import { HttpClientModule } from "@angular/common/http";
+import { ConfigurationComponent } from "./configuration/configuration.component";
 
 @NgModule({
   declarations: [
@@ -36,10 +38,12 @@ import { HttpClientModule } from "@angular/common/http";
     LastAddedSnippetsComponent,
     SnippetViewComponent,
     AllSnippetsComponent,
-    SearchFormComponent
+    SearchFormComponent,
+    ConfigurationComponent
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     AppRoutingModule,
     CodemirrorModule,
