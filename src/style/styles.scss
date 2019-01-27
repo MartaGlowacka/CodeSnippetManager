@@ -74,3 +74,28 @@ $list-colors3: #1b2f33, #248232, #28502e, #8c7051, #ef3054;
     background: $console-background;
   }
 }
+
+.tooltip-custom {
+  border: 2px solid;
+
+  position: absolute;
+  height: 220px;
+  width: 290px;
+  background: white;
+  border-radius: 4px;
+  z-index: 99999;
+  padding: 15px;
+
+  &::after {
+    content: "";
+    background: white;
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    top: -8px;
+    right: 15px;
+    transform: rotate(45deg);
+    border-left: 2px solid;
+    border-top: 2px solid;
+  }
+}

@@ -24,12 +24,24 @@
       "description": "This is description of second snippet",
       "tags": [
         {
+          "name": "css",
+          "color": "lawngreen"
+        },
+        {
+          "name": "php",
+          "color": "orange"
+        },
+        {
           "name": "angular",
           "color": "#57ff3a"
         },
         {
-          "name": "typescript",
-          "color": "gold"
+          "name": "node",
+          "color": "silver"
+        },
+        {
+          "name": "java",
+          "color": "yellow"
         }
       ],
       "links": [],

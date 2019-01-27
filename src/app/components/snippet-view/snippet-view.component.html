@@ -19,7 +19,40 @@
           [color]="tag.color"
           [editMode]="editMode"
         ></tag>
-        <span class="add" *ngIf="editMode" title="Add tag">+</span>
+        <span
+          class="add"
+          *ngIf="editMode"
+          title="Add tag"
+          (click)="isTooltipVisible = !isTooltipVisible"
+          >+</span
+        >
+
+        <div *ngIf="isTooltipVisible" class="tooltip-custom ">
+          <section>
+            <h4>Add new tag</h4>
+            <small
+              >To add tag select one from the list or create new one with custom
+              name and styling.</small
+            >
+            <div class="input-group has-margin-top-20">
+              <input
+                type="text"
+                autocomplete="off"
+                list="tags"
+                class="form-control"
+                name="tagName"
+                [(ngModel)]="selectedTag"
+              />
+              <datalist id="tags">
+                <option *ngFor="let tag of allTags">{{ tag.name }}</option>
+              </datalist>
+              <input name="Color Picker" class="form-control" type="color" />
+            </div>
+
+            <button class="btn" (click)="addNewTag()">Save changes</button>
+          </section>
+        </div>
+
         <div class="snippet-description" *ngIf="snippet">
           <p #param>{{ snippet["description"] }}</p>
         </div>
@@ -30,7 +63,7 @@
           class="btn btn-secondary btn-lg btn-block"
           (click)="editDescription()"
         >
-          Submit
+          Save
         </button>
         <div class="links has-margin-top-20">
           <h6>Related links:</h6>

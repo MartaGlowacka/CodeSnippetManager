@@ -75,6 +75,43 @@ div.snippet-container {
           }
           @include scrollbar(#aba8a6);
         }
+
+        .tooltip-custom {
+          top: 109px;
+          right: 2px;
+          .input-group {
+            display: flex;
+
+            .form-control {
+              &:hover,
+              &:focus {
+                box-shadow: none;
+                outline: none;
+              }
+            }
+
+            .form-control:nth-of-type(1) {
+              width: 60%;
+            }
+            .form-control:nth-of-type(2) {
+              cursor: pointer;
+            }
+          }
+
+          .btn {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.8;
+            &:hover,
+            &:focus {
+              box-shadow: none;
+              outline: none;
+              opacity: 1;
+            }
+          }
+        }
       }
 
       .links {

@@ -1,11 +1,6 @@
 import { ISnippet } from "./../../interfaces/snippet";
 import { SnippetFormComponent } from "./../snippet-form/snippet-form.component";
-import {
-  Component,
-  OnInit,
-  HostListener,
-  AfterViewChecked
-} from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { SnippetsService } from "src/app/services/snippets.service";
 
 @Component({

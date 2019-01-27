@@ -19,11 +19,15 @@ export class SnippetsService {
     return this.httpClient.get<ISnippet>(this.baseUrl + snippetId);
   }
 
-  editSnippetDescription(snippetId: number, body: object) {
+  editSnippet(snippetId: number, body: object) {
     return this.httpClient.patch(this.baseUrl + snippetId, body);
   }
 
   getTags() {
     return this.httpClient.get<any>(this.tagsUrl);
+  }
+
+  addNewTag(newTag) {
+    return this.httpClient.post<any>(this.tagsUrl, newTag);
   }
 }

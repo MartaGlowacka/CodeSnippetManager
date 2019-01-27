@@ -5,7 +5,9 @@ import {
   OnInit,
   ViewChild,
   AfterViewInit,
-  Renderer2
+  Renderer2,
+  ElementRef,
+  HostListener
 } from "@angular/core";
 import * as CodeMirror from "codemirror";
 import { PARAMETERS } from "@angular/core/src/util/decorators";
@@ -22,9 +24,16 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
   @ViewChild("codeeditor") codeEditor;
   @ViewChild("param") param;
 
+  isTooltipVisible: boolean = false;
+
   modalVisible: boolean = false;
 
   tags;
+  allTags;
+  selectedTag: string;
+
+  selectedDefaultTag;
+
   editMode: boolean = false;
   isExpanded: boolean = false;
   content: string =
@@ -76,6 +85,7 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.snippet["id"] = 1;
+    this.getAllTags();
   }
 
   ngAfterViewInit() {
@@ -92,6 +102,17 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
       this.snippet = res;
       this.tags = res.tags;
     });
+  }
+
+  async getAllTags() {
+    await this.snippetService.getTags().subscribe(
+      response => {
+        this.allTags = response;
+      },
+      error => {
+        console.error("Cant make req", error);
+      }
+    );
   }
 
   editModeOnOff() {
@@ -117,10 +138,34 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
     let description = this.param.nativeElement.innerText;
 
     await this.snippetService
-      .editSnippetDescription(this.snippet["id"], { description: description })
+      .editSnippet(this.snippet["id"], { description: description })
       .subscribe(res => {
-        console.log(res);
         this.snippet = res;
       });
+  }
+
+  async addNewTag() {
+    this.isTooltipVisible = !this.isTooltipVisible;
+
+    if (this.selectedTag) {
+      this.checkIfTagExsist();
+    }
+
+    if (this.selectedDefaultTag) {
+      this.tags.push(this.selectedDefaultTag);
+
+      await this.snippetService
+        .editSnippet(this.snippet["id"], { tags: this.tags })
+        .subscribe(res => {
+          console.log(res);
+          this.tags = res["tags"];
+        });
+    }
+  }
+
+  checkIfTagExsist() {
+    this.selectedDefaultTag = this.allTags.find(tag => {
+      return tag.name == this.selectedTag;
+    });
   }
 }
