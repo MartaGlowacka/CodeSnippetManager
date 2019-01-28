@@ -42,6 +42,10 @@
         {
           "name": "java",
           "color": "yellow"
+        },
+        {
+          "name": "css",
+          "color": "lawngreen"
         }
       ],
       "links": [],

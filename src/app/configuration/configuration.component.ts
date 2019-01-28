@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Renderer2 } from "@angular/core";
 
 @Component({
   selector: "configuration",
@@ -12,9 +12,11 @@ export class ConfigurationComponent implements OnInit {
 
   steps = [1, 2, 3, 4];
 
-  constructor() {}
+  constructor(private renderer: Renderer2) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.showInteger();
+  }
 
   changeStep() {
     this.stepId++;
@@ -25,6 +27,25 @@ export class ConfigurationComponent implements OnInit {
     if (this.stepId == 5) {
       this.stepId = 1;
       this.infoText = "Skip";
+    }
+  }
+
+  showInteger() {
+    let dots = document.querySelector(".dots");
+    let kids = dots.querySelectorAll(".dot");
+
+    let time = 0;
+    let index = 0;
+
+    for (let i = 0; i < kids.length; i++) {
+      setTimeout(() => {
+        // kids[i].classList.remove("dot");
+
+        this.renderer.removeClass(kids[i], "dot");
+        this.renderer.addClass(kids[i], "integer");
+        this.renderer.setProperty(kids[i], "innerHTML", "2");
+      }, time);
+      time += 800;
     }
   }
 }
