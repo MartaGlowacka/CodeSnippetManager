@@ -1,4 +1,10 @@
-import { Component, OnInit, Renderer2 } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Renderer2,
+  ViewChild,
+  ElementRef
+} from "@angular/core";
 
 @Component({
   selector: "configuration",
@@ -30,22 +36,23 @@ export class ConfigurationComponent implements OnInit {
     }
   }
 
+  pin = "758305";
+
   showInteger() {
     let dots = document.querySelector(".dots");
     let kids = dots.querySelectorAll(".dot");
 
     let time = 0;
-    let index = 0;
+    let pin = this.pin.split("");
+    console.log(typeof pin);
 
     for (let i = 0; i < kids.length; i++) {
       setTimeout(() => {
-        // kids[i].classList.remove("dot");
-
         this.renderer.removeClass(kids[i], "dot");
         this.renderer.addClass(kids[i], "integer");
-        this.renderer.setProperty(kids[i], "innerHTML", "2");
+        this.renderer.setProperty(kids[i], "innerHTML", pin[i]);
       }, time);
-      time += 800;
+      time += 500;
     }
   }
 }

@@ -46,6 +46,10 @@
         {
           "name": "css",
           "color": "lawngreen"
+        },
+        {
+          "name": "kotlin",
+          "color": "blue"
         }
       ],
       "links": [],

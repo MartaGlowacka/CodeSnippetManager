@@ -1,3 +1,5 @@
+import { CommonModule } from "@angular/common";
+import { AllTagsComponent } from "./components/all-tags/all-tags.component";
 import { ConfigurationComponent } from "./configuration/configuration.component";
 import { LastAddedSnippetsComponent } from "./components/last-added-snippets/last-added-snippets.component";
 import { SnippetViewComponent } from "./components/snippet-view/snippet-view.component";
@@ -28,6 +30,10 @@ const routes: Routes = [
       {
         path: "allSnippets",
         component: AllSnippetsComponent
+      },
+      {
+        path: "allTags",
+        component: AllTagsComponent
       },
       {
         path: "settings",

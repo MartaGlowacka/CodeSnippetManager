@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-7">
+    <div class="container" #tags>
+      <div
+        *ngFor="let tag of allTags"
+        class="tag-container"
+        (mouseenter)="showTagColor($event.target, tag)"
+        (mouseleave)="backToInitialColor($event.target)"
+        title="Edit"
+      >
+        <span>{{ tag.name }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-5"></div>
+</div>

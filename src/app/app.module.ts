@@ -23,6 +23,7 @@ import { AllSnippetsComponent } from "../app/components/all-snippets/all-snippet
 import { SearchFormComponent } from "../app/components/search-form/search-form.component";
 import { HttpClientModule } from "@angular/common/http";
 import { ConfigurationComponent } from "./configuration/configuration.component";
+import { AllTagsComponent } from "../app/components/all-tags/all-tags.component";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ConfigurationComponent } from "./configuration/configuration.component"
     SnippetViewComponent,
     AllSnippetsComponent,
     SearchFormComponent,
-    ConfigurationComponent
+    ConfigurationComponent,
+    AllTagsComponent
   ],
   imports: [
     BrowserModule,
