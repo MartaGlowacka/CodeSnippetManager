@@ -16,7 +16,17 @@
         cursor: pointer;
         border: 2px solid;
 
-        &:hover {
+        &.editMode {
+          transform: scale(1.1);
+          transition: all 200ms;
+        }
+
+        &.disableOnEdit {
+          pointer-events: none;
+          opacity: 0.8;
+        }
+
+        &:hover:not(.editMode) {
           background: gray;
           // color: whitesmoke;
           border: 2px solid;
@@ -30,6 +40,7 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          z-index: 0;
         }
       }
     }

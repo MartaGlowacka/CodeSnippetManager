@@ -28,6 +28,7 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
 
   modalVisible: boolean = false;
 
+  snippet = {};
   tagsInSnippet = [];
   allTags;
   providedTag: string;
@@ -50,11 +51,8 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam  it deserunt iusto possimus ducimus nulla? Nemo similiqu t, distinctio voluptatum amet quo quis corrupti impedit at ores. veritatis hic eaque debrrupti impedit atque veniam eve";
 
   codeMirrorOptions;
-
   languageModes;
   selectedMode: string = "javascript";
-
-  snippet = {};
 
   constructor(
     private renderer: Renderer2,
@@ -149,10 +147,8 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
   async addNewTagToList() {
     this.isTooltipVisible = !this.isTooltipVisible;
 
-    if (this.providedTag) {
-      this.checkIfTagExsistInSnippet();
-      this.checkIfTagExsistInAllTags();
-    }
+    this.checkIfTagExsistInSnippet();
+    this.checkIfTagExsistInAllTags();
 
     if (this.selectedDefaultTag) {
       console.warn("Tag already exist in snippet");
@@ -181,13 +177,13 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
       });
   }
 
-  checkIfTagExsistInSnippet() {
+  private checkIfTagExsistInSnippet() {
     this.selectedDefaultTag = this.tagsInSnippet.find(tag => {
       return tag.name == this.providedTag;
     });
   }
 
-  checkIfTagExsistInAllTags() {
+  private checkIfTagExsistInAllTags() {
     this.selectedExistedTag = this.allTags.find(tag => {
       return tag.name == this.providedTag;
     });

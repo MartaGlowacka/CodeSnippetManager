@@ -21,7 +21,7 @@
       "id": 2,
       "title": "Second snippet header",
       "content": "Second snippet content - checl how to parse code into json format",
-      "description": "This is description of second snippet",
+      "description": "This is description of second snippet.",
       "tags": [
         {
           "id": 13,
@@ -35,7 +35,7 @@
         },
         {
           "color": "#ff8040",
-          "name": "Perl",
+          "name": "perl",
           "id": 17
         },
         {

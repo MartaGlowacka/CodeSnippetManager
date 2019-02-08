@@ -7,7 +7,7 @@ import { Injectable } from "@angular/core";
 })
 export class SnippetsService {
   baseUrl = "http://localhost:3000/snippets/";
-  tagsUrl = "http://localhost:4001/tags";
+  tagsUrl = "http://localhost:4001/tags/";
 
   constructor(private httpClient: HttpClient) {}
 
@@ -29,5 +29,9 @@ export class SnippetsService {
 
   addNewTag(newTag) {
     return this.httpClient.post<any>(this.tagsUrl, newTag);
+  }
+
+  editTag(tagId: number, body: object) {
+    return this.httpClient.patch<any>(this.tagsUrl + tagId, body);
   }
 }

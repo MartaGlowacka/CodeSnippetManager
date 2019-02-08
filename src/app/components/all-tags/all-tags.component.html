@@ -6,6 +6,7 @@
         class="tag-container"
         (mouseenter)="showTagColor($event.target, tag)"
         (mouseleave)="backToInitialColor($event.target)"
+        (click)="editModeOn(tag, $event)"
         title="Edit"
       >
         <span>{{ tag.name }}</span>
@@ -13,11 +14,12 @@
     </div>
   </div>
   <div class="col-5">
-    <form>
-      <h2>Create new tag</h2>
+    <form #f="ngForm">
+      <h2>{{ getHeader() }}</h2>
       <div class="form-group">
         <label>Name</label>
         <input
+          #inputName
           type="text"
           class="form-control"
           [(ngModel)]="createdTagName"
@@ -28,6 +30,7 @@
         <label>Color</label>
 
         <input
+          #inputColor
           name="Color Picker"
           class="form-control"
           type="color"
