@@ -28,11 +28,13 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
 
   modalVisible: boolean = false;
 
-  tags;
+  tagsInSnippet = [];
   allTags;
-  selectedTag: string;
+  providedTag: string;
+  pickedColor: string;
 
   selectedDefaultTag;
+  selectedExistedTag;
 
   editMode: boolean = false;
   isExpanded: boolean = false;
@@ -100,7 +102,7 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
   async getSnippet() {
     await this.snippetService.getSnippetById(2).subscribe(res => {
       this.snippet = res;
-      this.tags = res.tags;
+      this.tagsInSnippet = res.tags;
     });
   }
 
@@ -144,28 +146,50 @@ export class SnippetViewComponent implements OnInit, AfterViewInit {
       });
   }
 
-  async addNewTag() {
+  async addNewTagToList() {
     this.isTooltipVisible = !this.isTooltipVisible;
 
-    if (this.selectedTag) {
-      this.checkIfTagExsist();
+    if (this.providedTag) {
+      this.checkIfTagExsistInSnippet();
+      this.checkIfTagExsistInAllTags();
     }
 
     if (this.selectedDefaultTag) {
-      this.tags.push(this.selectedDefaultTag);
+      console.warn("Tag already exist in snippet");
+    } else {
+      if (this.selectedExistedTag) {
+        this.tagsInSnippet.push(this.selectedExistedTag);
+      } else {
+        let newTag = {
+          color: this.pickedColor,
+          name: this.providedTag
+        };
 
-      await this.snippetService
-        .editSnippet(this.snippet["id"], { tags: this.tags })
-        .subscribe(res => {
-          console.log(res);
-          this.tags = res["tags"];
+        await this.snippetService.addNewTag(newTag).subscribe(res => {
+          newTag = res;
+
+          this.tagsInSnippet.push(newTag);
+          this.getSnippet();
         });
+      }
     }
+
+    await this.snippetService
+      .editSnippet(this.snippet["id"], { tags: this.tagsInSnippet })
+      .subscribe(res => {
+        this.tagsInSnippet = res["tags"];
+      });
   }
 
-  checkIfTagExsist() {
-    this.selectedDefaultTag = this.allTags.find(tag => {
-      return tag.name == this.selectedTag;
+  checkIfTagExsistInSnippet() {
+    this.selectedDefaultTag = this.tagsInSnippet.find(tag => {
+      return tag.name == this.providedTag;
+    });
+  }
+
+  checkIfTagExsistInAllTags() {
+    this.selectedExistedTag = this.allTags.find(tag => {
+      return tag.name == this.providedTag;
     });
   }
 }

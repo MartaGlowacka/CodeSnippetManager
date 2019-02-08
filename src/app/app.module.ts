@@ -51,6 +51,7 @@ import { AllTagsComponent } from "../app/components/all-tags/all-tags.component"
     CodemirrorModule,
     HttpClientModule
   ],
+  entryComponents: [],
   providers: [SnippetsService],
   bootstrap: [AppComponent]
 })

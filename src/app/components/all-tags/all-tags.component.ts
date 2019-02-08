@@ -8,6 +8,8 @@ import { Component, OnInit, Renderer2 } from "@angular/core";
 })
 export class AllTagsComponent implements OnInit {
   allTags;
+  createdTagName;
+  createdTagColor;
 
   constructor(
     private snippetService: SnippetsService,
@@ -35,5 +37,17 @@ export class AllTagsComponent implements OnInit {
 
   backToInitialColor(e) {
     this.renderer.setStyle(e, "background", "wheat");
+  }
+
+  async addNewTag() {
+    console.log(this.createdTagColor, this.createdTagName);
+    let newTag = {
+      name: this.createdTagName,
+      color: this.createdTagColor
+    };
+    await this.snippetService.addNewTag(newTag).subscribe(res => {
+      console.log(res);
+      this.getAllTags();
+    });
   }
 }

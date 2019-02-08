@@ -1,5 +1,15 @@
+import { TagComponent } from "./../tag/tag.component";
+import { AllTagsComponent } from "./../all-tags/all-tags.component";
+import { SnippetFormComponent } from "./../snippet-form/snippet-form.component";
 import { SnippetsService } from "src/app/services/snippets.service";
-import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Output,
+  EventEmitter,
+  Renderer2
+} from "@angular/core";
+import { inject } from "@angular/core/testing";
 
 @Component({
   selector: "search-form",
@@ -9,23 +19,17 @@ import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 export class SearchFormComponent implements OnInit {
   @Output() searchByTag = new EventEmitter();
   allTags: string[];
+  service: SnippetsService;
 
-  constructor(private snippetService: SnippetsService) {}
+  tags;
+
+  constructor() {}
 
   ngOnInit() {
     this.getAllTags();
   }
 
-  async getAllTags() {
-    await this.snippetService.getTags().subscribe(
-      response => {
-        this.allTags = response;
-      },
-      e => {
-        console.error("Cant make req.", e);
-      }
-    );
-  }
+  async getAllTags() {}
 
   onChange(e) {
     this.searchByTag.emit(e.target.value);

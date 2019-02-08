@@ -24,32 +24,24 @@
       "description": "This is description of second snippet",
       "tags": [
         {
-          "name": "css",
-          "color": "lawngreen"
+          "id": 13,
+          "name": "typescript",
+          "color": "gold"
         },
         {
-          "name": "php",
-          "color": "orange"
+          "id": 9,
+          "name": "sass",
+          "color": "crimson"
         },
         {
-          "name": "angular",
-          "color": "#57ff3a"
+          "color": "#ff8040",
+          "name": "Perl",
+          "id": 17
         },
         {
-          "name": "node",
-          "color": "silver"
-        },
-        {
-          "name": "java",
-          "color": "yellow"
-        },
-        {
-          "name": "css",
-          "color": "lawngreen"
-        },
-        {
-          "name": "kotlin",
-          "color": "blue"
+          "id": 7,
+          "name": "animation",
+          "color": "#87ff87"
         }
       ],
       "links": [],

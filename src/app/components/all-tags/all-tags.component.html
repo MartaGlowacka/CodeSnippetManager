@@ -12,5 +12,31 @@
       </div>
     </div>
   </div>
-  <div class="col-5"></div>
+  <div class="col-5">
+    <form>
+      <h2>Create new tag</h2>
+      <div class="form-group">
+        <label>Name</label>
+        <input
+          type="text"
+          class="form-control"
+          [(ngModel)]="createdTagName"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label>Color</label>
+
+        <input
+          name="Color Picker"
+          class="form-control"
+          type="color"
+          [(ngModel)]="createdTagColor"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary mb-2" (click)="addNewTag()">
+        Save
+      </button>
+    </form>
+  </div>
 </div>

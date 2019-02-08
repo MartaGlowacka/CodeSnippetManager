@@ -1,60 +1,94 @@
 {
   "tags": [
     {
+      "id": 1,
       "name": "javascript",
       "color": "pink"
     },
     {
+      "id": 2,
       "name": "java",
       "color": "yellow"
     },
     {
+      "id": 3,
       "name": "angular",
       "color": "#57ff3a"
     },
     {
+      "id": 4,
       "name": "react",
       "color": "red"
     },
     {
+      "id": 5,
       "name": "php",
       "color": "orange"
     },
     {
+      "id": 6,
       "name": "kotlin",
       "color": "blue"
     },
     {
+      "id": 7,
       "name": "animation",
       "color": "#87ff87"
     },
     {
+      "id": 8,
       "name": "css",
       "color": "lawngreen"
     },
     {
+      "id": 9,
       "name": "sass",
       "color": "crimson"
     },
     {
+      "id": 10,
       "name": "less",
       "color": "cadetblue"
     },
     {
+      "id": 11,
       "name": "error",
       "color": "brown"
     },
     {
+      "id": 12,
       "name": "json-server",
       "color": "brown"
     },
     {
+      "id": 13,
       "name": "typescript",
       "color": "gold"
     },
     {
+      "id": 15,
       "name": "node",
       "color": "silver"
+    },
+    {
+      "name": "c++",
+      "color": "#df8517",
+      "id": 16
+    },
+    {
+      "color": "#ff8040",
+      "name": "Perl",
+      "id": 17
+    },
+    {
+      "color": "#408080",
+      "name": "swift",
+      "id": 18
+    },
+    {
+      "color": "#ff80ff",
+      "name": "matlab",
+      "id": 19
     }
   ]
 }

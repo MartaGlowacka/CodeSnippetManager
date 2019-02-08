@@ -14,7 +14,7 @@
         </div>
 
         <tag
-          *ngFor="let tag of tags"
+          *ngFor="let tag of tagsInSnippet"
           [tagName]="tag.name"
           [color]="tag.color"
           [editMode]="editMode"
@@ -41,15 +41,22 @@
                 list="tags"
                 class="form-control"
                 name="tagName"
-                [(ngModel)]="selectedTag"
+                [(ngModel)]="providedTag"
               />
               <datalist id="tags">
                 <option *ngFor="let tag of allTags">{{ tag.name }}</option>
               </datalist>
-              <input name="Color Picker" class="form-control" type="color" />
+              <input
+                name="Color Picker"
+                class="form-control"
+                type="color"
+                [(ngModel)]="pickedColor"
+              />
             </div>
 
-            <button class="btn" (click)="addNewTag()">Save changes</button>
+            <button class="btn" (click)="addNewTagToList()">
+              Save changes
+            </button>
           </section>
         </div>
 
