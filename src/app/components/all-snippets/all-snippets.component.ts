@@ -2,6 +2,7 @@ import { ISnippet } from "./../../interfaces/snippet";
 import { SnippetFormComponent } from "./../snippet-form/snippet-form.component";
 import { Component, OnInit } from "@angular/core";
 import { SnippetsService } from "src/app/services/snippets.service";
+import { SlicePipe } from "@angular/common";
 
 @Component({
   selector: "all-snippets",
@@ -16,7 +17,8 @@ export class AllSnippetsComponent implements OnInit {
 
   allSnippets: ISnippet[];
   allSnippetsBuffor: ISnippet[];
-  filteredSnippets: ISnippet[] = [];
+  filteredSnippetsByTag: ISnippet[] = [];
+  filteredSnippetsBytext: ISnippet[] = [];
 
   constructor(private snippetService: SnippetsService) {}
 
@@ -38,20 +40,41 @@ export class AllSnippetsComponent implements OnInit {
 
   searchByTag(e: string) {
     this.allSnippetsBuffor = this.allSnippets.slice();
-    this.filteredSnippets = [];
+    this.filteredSnippetsByTag = [];
 
     if (e == "All") {
       return;
     }
 
-    this.allSnippets.forEach(snippet => {
+    let tableToFilter = this.filteredSnippetsBytext.length
+      ? this.filteredSnippetsBytext
+      : this.allSnippets;
+
+    tableToFilter.forEach(snippet => {
       snippet.tags.forEach(tag => {
         if (tag["name"] == e) {
-          this.filteredSnippets.push(snippet);
+          this.filteredSnippetsByTag.push(snippet);
         }
       });
     });
 
-    this.allSnippetsBuffor = this.filteredSnippets;
+    this.allSnippetsBuffor = this.filteredSnippetsByTag;
+  }
+
+  searchByText(e: string) {
+    this.allSnippetsBuffor = this.allSnippets.slice();
+    this.filteredSnippetsBytext = [];
+
+    let tableToFilter = this.filteredSnippetsByTag.length
+      ? this.filteredSnippetsByTag
+      : this.allSnippets;
+
+    tableToFilter.forEach(snippet => {
+      if (snippet.title.toLowerCase().includes(e)) {
+        this.filteredSnippetsBytext.push(snippet);
+      }
+    });
+
+    this.allSnippetsBuffor = this.filteredSnippetsBytext;
   }
 }

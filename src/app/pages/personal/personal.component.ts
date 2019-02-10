@@ -5,15 +5,11 @@ import { Component, OnInit, DoCheck } from "@angular/core";
   templateUrl: "./personal.component.html",
   styleUrls: ["./personal.component.scss"]
 })
-export class PersonalComponent implements OnInit, DoCheck {
+export class PersonalComponent implements OnInit {
   isExpanded: boolean;
   currentView: string = "home";
 
   constructor() {}
 
   ngOnInit() {}
-
-  ngDoCheck() {
-    console.log(this.currentView);
-  }
 }

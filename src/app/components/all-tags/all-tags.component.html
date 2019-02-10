@@ -2,6 +2,7 @@
   <div class="col-7">
     <div class="container" #tags>
       <div
+        clickOutside
         *ngFor="let tag of allTags"
         class="tag-container"
         (mouseenter)="showTagColor($event.target, tag)"
@@ -19,18 +20,17 @@
       <div class="form-group">
         <label>Name</label>
         <input
-          #inputName
           type="text"
           class="form-control"
           [(ngModel)]="createdTagName"
           name="name"
+          autocomplete="off"
         />
       </div>
       <div class="form-group">
         <label>Color</label>
 
         <input
-          #inputColor
           name="Color Picker"
           class="form-control"
           type="color"

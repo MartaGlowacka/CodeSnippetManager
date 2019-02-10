@@ -1,11 +1,14 @@
 <!-- <div class="col-11" style="padding: 20px;"> -->
-<search-form (searchByTag)="searchByTag($event)"></search-form>
+<search-form
+  (searchByTag)="searchByTag($event)"
+  (searchByText)="searchByText($event)"
+></search-form>
 
 <div class="last-added-list">
   <h3>All snippets</h3>
 
   <div class="list-group">
-    <a
+    <!-- <a
       href=""
       routerLink="/personal/snippetView/3"
       class="list-group-item list-group-item-action"
@@ -18,7 +21,7 @@
       <small
         ><b>Tags:</b> <tag *ngFor="let tag of tags" [tagName]="tag"></tag
       ></small>
-    </a>
+    </a> -->
     <a
       *ngFor="let snippet of allSnippetsBuffor"
       routerLink="/personal/snippetView/ + snippet.id"
@@ -37,7 +40,7 @@
       <!-- <small class="text-muted"><b>Tags:</b> #js; #function; #animation</small> -->
     </a>
 
-    <a href="#" class="list-group-item list-group-item-action">
+    <!-- <a href="#" class="list-group-item list-group-item-action">
       <div class="d-flex w-1 justify-content-between">
         <h5 class="mb-1">List group item heading</h5>
         <small class="text-muted">3 days ago</small>
@@ -60,7 +63,7 @@
       </div>
       <p class="mb-1">{{ description }}</p>
       <small class="text-muted"><b>Tags:</b> #js; #function; #animation</small>
-    </a>
+    </a> -->
   </div>
 </div>
 <!-- </div> -->

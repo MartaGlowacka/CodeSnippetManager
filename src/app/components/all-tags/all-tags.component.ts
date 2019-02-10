@@ -1,5 +1,11 @@
 import { SnippetsService } from "./../../services/snippets.service";
-import { Component, OnInit, Renderer2, ViewChild } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  Renderer2,
+  ViewChild,
+  HostListener
+} from "@angular/core";
 import { formArrayNameProvider } from "@angular/forms/src/directives/reactive_directives/form_group_name";
 
 @Component({
@@ -14,8 +20,25 @@ export class AllTagsComponent implements OnInit {
   createdTagName;
   createdTagColor;
   editMode: boolean = false;
+  editedElement;
 
   tagToEdit;
+
+  @HostListener("click", ["$event.currentTarget"])
+  onClickOutside() {
+    if (!this.editMode && !this.editedElement) {
+      return;
+    } else if (
+      this.editedElement != event.target &&
+      event.target["localName"] != "input"
+    ) {
+      this.renderer.addClass(this.editedElement, "shake-horizontal");
+
+      setTimeout(() => {
+        this.renderer.removeClass(this.editedElement, "shake-horizontal");
+      }, 800);
+    }
+  }
 
   constructor(
     private snippetService: SnippetsService,
@@ -83,6 +106,7 @@ export class AllTagsComponent implements OnInit {
 
     if (e.currentTarget.classList[1] != "editMode") {
       this.renderer.addClass(e.currentTarget, "editMode");
+      this.editedElement = e.currentTarget;
 
       for (let i = 0; i < tagsElements.length; i++) {
         if (!tagsElements[i].classList[1]) {
@@ -91,6 +115,7 @@ export class AllTagsComponent implements OnInit {
       }
     } else {
       this.renderer.removeClass(e.currentTarget, "editMode");
+      this.editedElement = undefined;
 
       for (let i = 0; i < tagsElements.length; i++) {
         this.renderer.removeClass(tagsElements[i], "disableOnEdit");

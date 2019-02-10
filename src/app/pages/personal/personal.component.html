@@ -2,20 +2,28 @@
   <div class="row user-view">
     <div class="col-1">
       <ul class="list-group">
-        <li class="list-group-item" title="Home">
+        <li class="list-group-item " title="Home" routerLinkActive="is-active">
           <a (click)="currentView = 'home'" href="#" routerLink="./home"
             ><i class="fa fa-home"></i
           ></a>
         </li>
-        <li class="list-group-item" title="All snippets">
+        <li
+          class="list-group-item"
+          title="All snippets"
+          routerLinkActive="is-active"
+        >
           <a (click)="currentView = 'all'" href="#" routerLink="./allSnippets"
             ><i class="fa fa-database"></i
           ></a>
         </li>
-        <li class="list-group-item" title="Tags">
+        <li class="list-group-item" title="Tags" routerLinkActive="is-active">
           <a routerLink="./allTags"><i class="fa fa-tags"></i></a>
         </li>
-        <li class="list-group-item" title="Profile settings">
+        <li
+          class="list-group-item"
+          title="Profile settings"
+          routerLinkActive="is-active"
+        >
           <a href="#" routerLink="./settings"><i class="fa fa-cogs"></i></a>
         </li>
         <li class="list-group-item" title="Doc"><i class="fa fa-book"></i></li>

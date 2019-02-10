@@ -1,3 +1,4 @@
+import { ISnippet } from "./../../interfaces/snippet";
 import { TagComponent } from "./../tag/tag.component";
 import { AllTagsComponent } from "./../all-tags/all-tags.component";
 import { SnippetFormComponent } from "./../snippet-form/snippet-form.component";
@@ -18,20 +19,32 @@ import { inject } from "@angular/core/testing";
 })
 export class SearchFormComponent implements OnInit {
   @Output() searchByTag = new EventEmitter();
+  @Output() searchByText = new EventEmitter();
   allTags: string[];
+  allSnippets: ISnippet[] = [];
   service: SnippetsService;
 
-  tags;
-
-  constructor() {}
+  constructor(private snippetService: SnippetsService) {}
 
   ngOnInit() {
     this.getAllTags();
   }
 
-  async getAllTags() {}
+  async getAllTags() {
+    this.snippetService.getTags().subscribe(response => {
+      this.allTags = response;
+    });
+  }
 
   onChange(e) {
     this.searchByTag.emit(e.target.value);
+  }
+
+  onType(e) {
+    if (e.target.value != "") {
+      this.searchByText.emit(e.target.value);
+    } else {
+      this.searchByText.emit(undefined);
+    }
   }
 }

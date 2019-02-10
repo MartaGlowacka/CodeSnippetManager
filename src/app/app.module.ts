@@ -24,6 +24,7 @@ import { SearchFormComponent } from "../app/components/search-form/search-form.c
 import { HttpClientModule } from "@angular/common/http";
 import { ConfigurationComponent } from "./configuration/configuration.component";
 import { AllTagsComponent } from "../app/components/all-tags/all-tags.component";
+import { ClickOutsideDirective } from "./directives/click-outside.directive";
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AllTagsComponent } from "../app/components/all-tags/all-tags.component"
     AllSnippetsComponent,
     SearchFormComponent,
     ConfigurationComponent,
-    AllTagsComponent
+    AllTagsComponent,
+    ClickOutsideDirective
   ],
   imports: [
     BrowserModule,

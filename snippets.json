@@ -42,6 +42,11 @@
           "id": 7,
           "name": "animation",
           "color": "#87ff87"
+        },
+        {
+          "id": 5,
+          "name": "php",
+          "color": "#ff8040"
         }
       ],
       "links": [],
@@ -78,6 +83,64 @@
         "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics"
       ],
       "date": "19 days ago"
+    },
+    {
+      "id": 5,
+      "title": "Media Queries for Standard Devices",
+      "content": "A major component of responsive design is creating the right experience for the right device. With a gazillion different devices on the market, this can be a tall task. We've rounded up media queries that can be used to target designs for many standard and popular devices that is certainly worth a read.     If you're looking for a comprehensive list of media queries, this repository is a good resource.",
+      "description": "An object is a collection of related data and/or functionality (which usually consists of several variables and functions — which are called properties and methods when they are inside objects.) Let's work through an example to understand what they look like.",
+      "tags": [
+        {
+          "id": 13,
+          "name": "typescript",
+          "color": "gold"
+        },
+        {
+          "id": 9,
+          "name": "sass",
+          "color": "crimson"
+        },
+        {
+          "color": "#ff8040",
+          "name": "perl",
+          "id": 17
+        }
+      ],
+      "links": [
+        "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics"
+      ],
+      "date": "63 days ago"
+    },
+    {
+      "id": 6,
+      "title": "Lazy Loading Images",
+      "content": "A major component of responsive design is creating the right experience for the right device. With a gazillion different devices on the market, this can be a tall task. We've rounded up media queries that can be used to target designs for many standard and popular devices that is certainly worth a read.     If you're looking for a comprehensive list of media queries, this repository is a good resource.",
+      "description": "An object is a collection of related data and/or functionality (which usually consists of several variables and functions — which are called properties and methods when they are inside objects.) Let's work through an example to understand what they look like.",
+      "tags": [],
+      "links": [
+        "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics"
+      ],
+      "date": "63 days ago"
+    },
+    {
+      "id": 7,
+      "title": "Custom File Input Styling",
+      "content": "A major component of responsive design is creating the right experience for the right device. With a gazillion different devices on the market, this can be a tall task. We've rounded up media queries that can be used to target designs for many standard and popular devices that is certainly worth a read.     If you're looking for a comprehensive list of media queries, this repository is a good resource.",
+      "description": "An object is a collection of related data and/or functionality (which usually consists of several variables and functions — which are called properties and methods when they are inside objects.) Let's work through an example to understand what they look like.",
+      "tags": [
+        {
+          "name": "javascript",
+          "color": "pink"
+        },
+        {
+          "name": "css",
+          "color": "lawngreen"
+        }
+      ],
+      "links": [
+        "https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics"
+      ],
+      "date": "63 days ago"
     }
   ]
 }
