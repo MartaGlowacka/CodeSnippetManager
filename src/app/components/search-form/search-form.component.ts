@@ -44,7 +44,7 @@ export class SearchFormComponent implements OnInit {
     if (e.target.value != "") {
       this.searchByText.emit(e.target.value);
     } else {
-      this.searchByText.emit(undefined);
+      this.searchByText.emit();
     }
   }
 }

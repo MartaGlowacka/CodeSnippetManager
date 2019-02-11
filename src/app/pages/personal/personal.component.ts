@@ -7,7 +7,6 @@ import { Component, OnInit, DoCheck } from "@angular/core";
 })
 export class PersonalComponent implements OnInit {
   isExpanded: boolean;
-  currentView: string = "home";
 
   constructor() {}
 

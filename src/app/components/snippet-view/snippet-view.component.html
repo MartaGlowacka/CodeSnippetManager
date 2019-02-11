@@ -13,12 +13,15 @@
           <i class="fa fa-trash" title="Delete snippet"></i>
         </div>
 
-        <tag
-          *ngFor="let tag of tagsInSnippet"
-          [tagName]="tag.name"
-          [color]="tag.color"
-          [editMode]="editMode"
-        ></tag>
+        <div class="tags">
+          <tag
+            *ngFor="let tag of tagsInSnippet"
+            [tagName]="tag.name"
+            [color]="tag.color"
+            [editMode]="editMode"
+          ></tag>
+        </div>
+
         <span
           class="add"
           *ngIf="editMode"
@@ -67,7 +70,7 @@
         <button
           *ngIf="editMode"
           type="button"
-          class="btn btn-secondary btn-lg btn-block"
+          class="btn btn-secondary btn-lg btn-block save"
           (click)="editDescription()"
         >
           Save

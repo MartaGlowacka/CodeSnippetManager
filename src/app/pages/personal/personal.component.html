@@ -3,16 +3,14 @@
     <div class="col-1">
       <ul class="list-group">
         <li class="list-group-item " title="Home" routerLinkActive="is-active">
-          <a (click)="currentView = 'home'" href="#" routerLink="./home"
-            ><i class="fa fa-home"></i
-          ></a>
+          <a href="#" routerLink="./home"><i class="fa fa-home"></i></a>
         </li>
         <li
           class="list-group-item"
           title="All snippets"
           routerLinkActive="is-active"
         >
-          <a (click)="currentView = 'all'" href="#" routerLink="./allSnippets"
+          <a href="#" routerLink="./allSnippets"
             ><i class="fa fa-database"></i
           ></a>
         </li>
@@ -33,37 +31,5 @@
     <div class="col-11">
       <main><router-outlet></router-outlet></main>
     </div>
-
-    <!-- <div class="col-11" *ngIf="currentView == 'home'">
-      <div class="row">
-        <div
-          class="col-8"
-          [ngClass]="{ 'col-sm-5': !isExpanded, 'is-display-none': isExpanded }"
-        >
-          <last-added-snippets></last-added-snippets>
-        </div>
-        <div
-          class="col-4 "
-          [ngClass]="{ 'col-sm-12': isExpanded, 'col-sm-7': !isExpanded }"
-        >
-          <i
-            class="fa"
-            [ngClass]="{ 'fa-compress': isExpanded, 'fa-expand': !isExpanded }"
-            (click)="isExpanded = !isExpanded"
-          ></i>
-          <h3>Create new</h3>
-          <snippet-form></snippet-form>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- <div class="col-11" style="padding: 20px;" *ngIf="currentView == 'all'">
-     <snippet-view></snippet-view> -->
-    <!-- <all-snippets></all-snippets> -->
-    <!-- </div> -->
-
-    <!-- <div class="col-11" style="padding: 20px;" *ngIf="currentView == 'config'">
-      <configuration></configuration>
-    </div> -->
   </div>
 </div>

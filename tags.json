@@ -43,7 +43,7 @@
     {
       "id": 9,
       "name": "sass",
-      "color": "crimson"
+      "color": "#e0618a"
     },
     {
       "id": 10,
@@ -58,7 +58,7 @@
     {
       "id": 12,
       "name": "json-server",
-      "color": "#0000ff"
+      "color": "#6f6fff"
     },
     {
       "id": 13,

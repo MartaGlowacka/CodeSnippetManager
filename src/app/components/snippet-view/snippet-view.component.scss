@@ -48,6 +48,14 @@ div.snippet-container {
           }
         }
 
+        .tags {
+          display: flex;
+          flex-wrap: wrap;
+          max-width: 430px;
+          min-height: 50px;
+          overflow: auto;
+        }
+
         span.add {
           font-size: 24px;
           top: 68px;
@@ -111,6 +119,10 @@ div.snippet-container {
               opacity: 1;
             }
           }
+        }
+
+        button.save {
+          // position: absolute;
         }
       }
 

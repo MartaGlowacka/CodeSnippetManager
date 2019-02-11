@@ -70,11 +70,20 @@ export class AllSnippetsComponent implements OnInit {
       : this.allSnippets;
 
     tableToFilter.forEach(snippet => {
-      if (snippet.title.toLowerCase().includes(e)) {
+      if (
+        snippet.title.toLowerCase().includes(e) ||
+        snippet.description.toLowerCase().includes(e)
+      ) {
         this.filteredSnippetsBytext.push(snippet);
       }
     });
 
-    this.allSnippetsBuffor = this.filteredSnippetsBytext;
+    if (e == undefined && this.filteredSnippetsByTag.length) {
+      this.allSnippetsBuffor = this.filteredSnippetsByTag;
+    } else if (e == undefined) {
+      this.allSnippetsBuffor = this.allSnippets.slice();
+    } else {
+      this.allSnippetsBuffor = this.filteredSnippetsBytext;
+    }
   }
 }
