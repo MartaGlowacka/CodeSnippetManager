@@ -25,6 +25,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ConfigurationComponent } from "./configuration/configuration.component";
 import { AllTagsComponent } from "../app/components/all-tags/all-tags.component";
 import { ClickOutsideDirective } from "./directives/click-outside.directive";
+import { TaskIconComponent } from './task-icon/task-icon.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { ClickOutsideDirective } from "./directives/click-outside.directive";
     SearchFormComponent,
     ConfigurationComponent,
     AllTagsComponent,
-    ClickOutsideDirective
+    ClickOutsideDirective,
+    TaskIconComponent
   ],
   imports: [
     BrowserModule,

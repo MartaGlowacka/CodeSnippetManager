@@ -1,0 +1,115 @@
+.task-container {
+  height: 50px;
+  width: 50px;
+  margin-right: 30px;
+  padding: 7px;
+
+  border-radius: 2px;
+
+  .task {
+    height: calc(100% / 3);
+    width: 100%;
+    padding-top: 3px;
+    padding-left: 3px;
+    position: relative;
+
+    span {
+      display: inline;
+      position: relative;
+
+      margin-right: 2px;
+      i.fa {
+        font-size: 11px;
+        position: absolute;
+        color: #ffdd57;
+      }
+    }
+
+    &:after {
+      content: "";
+
+      display: inline-block;
+      width: 60%;
+      height: 4px;
+      background: #ffdd57;
+      position: absolute;
+      right: -4px;
+      top: 7px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.container-task {
+  position: relative;
+
+  .tasks {
+    margin-top: 20px;
+    margin-right: 15px;
+    height: 30px;
+    width: 30px;
+    background: #348effd1;
+    background: rgba(255, 221, 87, 1);
+    // -webkit-clip-path: polygon(
+    //   100% 80%,
+    //   36% 80%,
+    //   0% 100%,
+    //   0 0,
+    //   100% 0,
+    //   100% 50%
+    // );
+    // clip-path: polygon(100% 80%, 36% 80%, 0% 100%, 0 0, 100% 0, 100% 50%);
+  }
+
+  .one {
+    top: -5px;
+    right: 10px;
+    // content: "";
+    height: 30px;
+    width: 25px;
+    position: absolute;
+
+    border-top: 2px solid #3c92fe80;
+    border-top: 2px solid rgba(255, 221, 87, 0.7);
+    border-right: 2px solid #3c92fe80;
+    border-right: 2px solid rgba(255, 221, 87, 0.7);
+  }
+
+  .second {
+    top: -10px;
+    right: 5px;
+    // content: "";
+    height: 30px;
+    width: 25px;
+    position: absolute;
+
+    border-top: 2px solid #3c92fe52;
+    border-top: 2px solid rgba(255, 221, 87, 0.5);
+    border-right: 2px solid #3c92fe52;
+    border-right: 2px solid rgba(255, 221, 87, 0.5);
+  }
+
+  // &:before {
+  //   top: -5px;
+  //   right: 10px;
+  //   content: "";
+  //   height: 30px;
+  //   width: 25px;
+  //   position: absolute;
+  //   // background: red;
+  //   border-top: 2px solid #3c92fe80;
+  //   border-right: 2px solid #3c92fe80;
+  // }
+
+  // &:after {
+  //   top: -10px;
+  //   right: 5px;
+  //   content: "";
+  //   height: 30px;
+  //   width: 25px;
+  //   position: absolute;
+  //   // background: yellow;
+  //   border-top: 2px solid #3c92fe52;
+  //   border-right: 2px solid #3c92fe52;
+  // }
+}
