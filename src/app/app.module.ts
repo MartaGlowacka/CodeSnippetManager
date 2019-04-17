@@ -26,6 +26,7 @@ import { ConfigurationComponent } from "./configuration/configuration.component"
 import { AllTagsComponent } from "../app/components/all-tags/all-tags.component";
 import { ClickOutsideDirective } from "./directives/click-outside.directive";
 import { TaskIconComponent } from './task-icon/task-icon.component';
+import { BombComponent } from './bomb/bomb.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { TaskIconComponent } from './task-icon/task-icon.component';
     ConfigurationComponent,
     AllTagsComponent,
     ClickOutsideDirective,
-    TaskIconComponent
+    TaskIconComponent,
+    BombComponent
   ],
   imports: [
     BrowserModule,

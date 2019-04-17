@@ -21,7 +21,7 @@
       "id": 2,
       "title": "Second snippet header",
       "content": "Second snippet content - checl how to parse code into json format",
-      "description": "This is description of second snippet.",
+      "description": "This is description of second snippet.nb bv bv bv",
       "tags": [
         {
           "id": 13,
@@ -72,6 +72,11 @@
           "name": "c++",
           "color": "#df8517",
           "id": 16
+        },
+        {
+          "id": 11,
+          "name": "error",
+          "color": "brown"
         }
       ],
       "links": [],

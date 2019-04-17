@@ -141,3 +141,236 @@
     opacity: 0;
   }
 }
+
+
+.avatar-container, div[class^="shape"], .clock {
+  margin-right: 50px;
+
+
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  // background: #E8E8E8;
+  background: #b7c3f347;
+  position: relative;
+  transition: 800ms;
+
+
+    .clock {
+
+      // display: none;
+      opacity: 0;
+
+      height: 40px;
+      padding-bottom: 31%;
+      position: relative;
+      width: 40px;
+
+        &:after {
+      background: #000;
+      border-radius: 50%;
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 5%;
+      height: 5%;
+      z-index: 10;
+     }
+.minutes-container, .hours-container, .seconds-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .hours {
+      background: #000;
+      height: 20%;
+      left: 48.75%;
+      position: absolute;
+      top: 30%;
+      transform-origin: 50% 100%;
+      width: 2.5%;
+    }
+
+    .minutes {
+      background: #000;
+      height: 40%;
+      left: 49%;
+      position: absolute;
+      top: 10%;
+      transform-origin: 50% 100%;
+      width: 2%;
+    }
+
+    .seconds {
+      background: #000;
+      height: 45%;
+      left: 49.5%;
+      position: absolute;
+      top: 14%;
+      transform-origin: 50% 80%;
+      width: 1%;
+      z-index: 8;
+    }
+
+    .hours-container {
+      animation: rotate 43200s infinite linear;
+    }
+    .minutes-container {
+      animation: rotate 3600s infinite linear;
+    }
+    .seconds-container {
+      animation: rotate 60s infinite linear;
+    }
+
+    .minutes-container {
+      animation: rotate 3600s infinite steps(60);
+    }
+    .seconds-container {
+      animation: rotate 60s infinite steps(60);
+    }
+    }
+
+
+
+
+
+    @keyframes rotate {
+      100% {
+        transform: rotateZ(360deg);
+      }
+    }
+
+
+
+
+ &:hover {
+
+  div[class^="shape"]{
+      opacity: 0;
+    }
+    // .shape_1, .shape_2, .shape_3, .shape_4, .shape_5 , .shape_6 {
+    //   opacity: 0;
+    //   // display: none;
+    // }
+
+    .shape_4 {
+      // clip-path: circle(29% at 127% 28%);
+    }
+
+    .shape_5 {
+
+    }
+
+    .shape_4 {
+      // clip-path: polygon(16% 80%, 100% 0, 0 0);
+    }
+
+    .shape_7 {
+      // clip-path: circle(32.1% at 100% 120%);
+      // animation: shake-horizontal 0.6s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+      clip-path: circle(55% at 50% 50%);
+    }
+
+    @keyframes shake-horizontal {
+      0%,
+      100% {
+        -webkit-transform: translateX(0);
+                transform: translateX(0);
+      }
+      10%,
+      30%,
+      50%,
+      70% {
+        -webkit-transform: translateX(-3px);
+                transform: translateX(-3px);
+      }
+      20%,
+      40%,
+      60% {
+        -webkit-transform: translateX(3px);
+                transform: translateX(3px);
+      }
+      80% {
+        -webkit-transform: translateX(3px);
+                transform: translateX(3px);
+      }
+      90% {
+        -webkit-transform: translateX(-3x);
+                transform: translateX(-3px);
+      }
+    }
+
+
+    .clock {
+      // display: block;
+      opacity: 1;
+
+    }
+
+  }
+
+
+  div[class^="shape"] {
+    position: absolute;
+    opacity: 0.9;
+    // display: none;
+  }
+
+  .shape_1 {
+    clip-path: polygon(94% 58%, 0 100%, 100% 100%);
+    background: #EC0B43;
+    transition: all;
+
+  }
+  .shape_2 {
+    clip-path: polygon(90% 85%, 0 100%, 0 0);
+    background: #A5668B;
+
+    // opacity: 0.5;
+  }
+  .shape_3 {
+    clip-path: polygon(16% 80%, 100% 0, 0 0);
+    background: #368F8B;
+    z-index: 999;
+
+    // opacity: 0.5;
+  }
+
+  .shape_4 {
+    clip-path: circle(23.7% at 85% 29%);
+    background: green;
+    z-index: 9999;
+  }
+
+  .shape_5 {
+    clip-path: circle(32.7% at 60% 86%);
+    background: #504edd;
+    z-index: 9999;
+  }
+  .shape_6 {
+    clip-path: circle(15.1% at 12% 54%);
+    background: #cf1488;
+    z-index: 9999;
+  }
+  .shape_7 {
+    clip-path: circle(27.1% at 50% 50%);
+
+    background: #b9b9b985;
+    z-index: 9999;
+  }
+
+  .initials {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999999999;
+    font-weight: 700;
+    // display: none;
+  }
+}

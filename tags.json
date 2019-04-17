@@ -94,6 +94,11 @@
       "name": "error",
       "color": "#0000ff",
       "id": 20
+    },
+    {
+      "name": "nb nb nb ",
+      "color": null,
+      "id": 21
     }
   ]
 }

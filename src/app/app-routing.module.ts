@@ -1,3 +1,4 @@
+import { BombComponent } from "./bomb/bomb.component";
 import { CommonModule } from "@angular/common";
 import { AllTagsComponent } from "./components/all-tags/all-tags.component";
 import { ConfigurationComponent } from "./configuration/configuration.component";
@@ -38,6 +39,10 @@ const routes: Routes = [
       {
         path: "settings",
         component: ConfigurationComponent
+      },
+      {
+        path: "doc",
+        component: BombComponent
       }
     ]
   },
