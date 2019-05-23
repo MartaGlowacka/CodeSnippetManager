@@ -1,3 +1,5 @@
+import { TimeZonesComponent } from '../app/components/time-zones/time-zones.component';
+
 import { CommonModule } from "@angular/common";
 import { SnippetsService } from "./services/snippets.service";
 import { AppPage } from "./../../e2e/src/app.po";
@@ -26,7 +28,8 @@ import { ConfigurationComponent } from "./configuration/configuration.component"
 import { AllTagsComponent } from "../app/components/all-tags/all-tags.component";
 import { ClickOutsideDirective } from "./directives/click-outside.directive";
 import { TaskIconComponent } from './task-icon/task-icon.component';
-import { BombComponent } from './bomb/bomb.component';
+
+
 
 @NgModule({
   declarations: [
@@ -47,7 +50,8 @@ import { BombComponent } from './bomb/bomb.component';
     AllTagsComponent,
     ClickOutsideDirective,
     TaskIconComponent,
-    BombComponent
+    TimeZonesComponent
+
   ],
   imports: [
     BrowserModule,

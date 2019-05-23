@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BombComponent } from './bomb.component';
+import { TimeZonesComponent } from './time-zones.component';
 
-describe('BombComponent', () => {
-  let component: BombComponent;
-  let fixture: ComponentFixture<BombComponent>;
+describe('TimeZonesComponent', () => {
+  let component: TimeZonesComponent;
+  let fixture: ComponentFixture<TimeZonesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BombComponent ]
+      declarations: [ TimeZonesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BombComponent);
+    fixture = TestBed.createComponent(TimeZonesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

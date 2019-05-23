@@ -1,4 +1,4 @@
-import { BombComponent } from "./bomb/bomb.component";
+
 import { CommonModule } from "@angular/common";
 import { AllTagsComponent } from "./components/all-tags/all-tags.component";
 import { ConfigurationComponent } from "./configuration/configuration.component";
@@ -11,6 +11,7 @@ import { DashboardComponent } from "../app/pages/dashboard/dashboard.component";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { PersonalComponent } from "./pages/personal/personal.component";
+import { TimeZonesComponent } from './components/time-zones/time-zones.component';
 
 const routes: Routes = [
   { path: "", component: DashboardComponent },
@@ -42,7 +43,7 @@ const routes: Routes = [
       },
       {
         path: "doc",
-        component: BombComponent
+        component: TimeZonesComponent
       }
     ]
   },

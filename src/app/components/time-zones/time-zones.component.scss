@@ -1,0 +1,96 @@
+.container {
+
+  width: 100vw;
+  height: 1500px;
+  border: 1px solid;
+  margin: 8px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  // overflow: hidden;
+
+  // .col {
+
+  //   border: 1px solid blue;
+
+  .zone {
+
+    margin: 5px;
+    position: relative;
+    width: 120px;
+    border: 1px solid green;
+    padding-left: 20px;
+
+    &:before {
+      content: '';
+      height: 18px;
+      width: 18px;
+      border: 1px solid red;
+      position: absolute;
+      left: 0;
+    }
+  }
+  // }
+
+  .tagi {
+
+
+      width: 130px;
+      height: 20px;
+      margin: 2px;
+      font-size: 12px;
+      font-style: italic;
+      border-radius: 5px;
+      padding: 2px 4px;
+      color: black !important;
+      background: red;
+      cursor: pointer;
+      transition: all 0.4s ease;
+
+
+      .date-name{
+         display: flex;
+        justify-content: space-between;
+      }
+
+      .bottom-date {
+          visibility: hidden;
+          opacity: 0;
+          overflow: hidden;
+          color: transparent;
+          transition-delay: 0.1s;
+          transition-duration: 0.1s;
+          -webkit-animation: fade-in 1.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+          animation: fade-in 1.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
+      }
+
+      &:hover {
+        height: 40px;
+
+        .bottom-date {
+          color: black;
+          opacity: 0.8;
+          visibility: visible;
+      }
+      }
+
+  }
+
+
+}
+
+
+.fade-in {
+
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
