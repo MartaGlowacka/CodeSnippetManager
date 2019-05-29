@@ -1,8 +1,8 @@
-
+<!--
 
 <div class="container">
 
-  <!-- <div class="row">
+ <div class="row">
 
     <div class="col" *ngFor="let zone of timeZones; let index=index">
         <div class="zone" *ngIf="(index + 1) % 5 == 0">
@@ -18,7 +18,7 @@
   </div> -->
 
 
-   <div class="tagi" [ngClass]="{'hover-date': isHover}">
+   <!-- <div class="tagi" [ngClass]="{'hover-date': isHover}">
      <div class="date-name">
       <span>Stage </span>
       <span>12.05-14.07</span>
@@ -28,4 +28,12 @@
     </div>
    </div>
 
+</div> -->
+
+
+
+<div class="menu-container">
+  <ul class="menu-list">
+    <li *ngFor="let zone of timeZones" class="menu-element">{{zone}}</li>
+  </ul>
 </div>

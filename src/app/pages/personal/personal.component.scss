@@ -100,6 +100,12 @@
     div.col-11 {
       height: inherit;
       min-height: 80vh;
+      //te 5 na dole do testów - usunac
+      overflow: hidden;
+      padding: 0;
+      width: 100vw !important;
+      max-width: 100vw !important;
+      flex: 0 0 100%;
       .row {
         h3 {
           text-align: center;
